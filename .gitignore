@@ -1,0 +1,9 @@
+# Configuración del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs y dependencias de editores (opcional)
+.vscode/
+.idea/
+*.log

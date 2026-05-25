@@ -1,0 +1,630 @@
+// =====================================
+// TRANSLATIONS
+// =====================================
+const translations = {
+    es: {
+        heroTitle: "El ritual de nutrición que tu piel merece.",
+        heroSubtitle: "Artesana, 100% natural.",
+        heroCta: "Ver Catálogo",
+        ritual1Title: "Nutrición Profunda",
+        ritual1Desc: "El Tallow imita la barrera natural de la piel permitiendo una absorción inmediata llena de vitaminas A, D, E y K.",
+        ritual2Title: "Lotes Pequeños (Small Batch)",
+        ritual2Desc: "Garantía de frescura. Elaborado esta misma semana sin conservantes químicos.",
+        ritual3Title: "Aroma Terapia",
+        ritual3Desc: "Los aceites esenciales puros brindan una experiencia aromática que relaja tu sistema nervioso.",
+        ingredientsTitle: "Nuestros Ingredientes Estrella",
+        ing1Title: "Grass-Fed Tallow",
+        ing1Desc: "Rico en vitaminas A, D, E y K, es el humectante más compatible con la biología de tu piel.",
+        ing2Title: "Avena Orgánica",
+        ing2Desc: "Un calmante natural ancestral que reduce la inflamación y protege la barrera cutánea.",
+        ing3Title: "Miel Cruda",
+        ing3Desc: "Un potente humectante repleto de enzimas y antioxidantes que iluminan tu rostro al instante.",
+        counter1Text: "Clientas Satisfechas",
+        counter2Text: "Ingredientes Naturales",
+        counter3Text: "Artesana Desde",
+        catalogTitle: "Nuestro Catálogo",
+        btnBack: "Volver a Categorías",
+        btnDetails: "Ver Detalles",
+        btnWa: "WhatsApp",
+        comingSoon: "Próximamente en esta categoría...",
+        tabBtnDesc: "Descripción",
+        tabBtnIngr: "Ingredientes",
+        tabBtnProp: "Propiedades",
+        testimonialText: "\"Finalmente una crema que mi piel sensible tolera. El olor a natural es increíble. Es un lujo para todos los días.\"",
+        storyTitle: "Nuestra Historia",
+        storyP1: "Mi pasión por el bienestar natural me llevó a buscar alternativas reales a los químicos industriales.",
+        storyP2: "Very Natural nace con la promesa de entregar solo productos que yo misma usaría en mi familia. Hecho a mano, con amor, honestidad y respeto absoluto por tu piel."
+    },
+    en: {
+        heroTitle: "Ancestral skin nourishment.",
+        heroSubtitle: "Handcrafted, 100% natural.",
+        heroCta: "Shop the Collection",
+        ritual1Title: "Deep Nutrition",
+        ritual1Desc: "Tallow mimics the skin's natural barrier, allowing for immediate absorption of vitamins A, D, E, and K.",
+        ritual2Title: "Small Batches",
+        ritual2Desc: "Guaranteed freshness. Handcrafted this week without harmful chemical preservatives.",
+        ritual3Title: "Aroma Therapy",
+        ritual3Desc: "Pure essential oils provide an aromatic experience that soothes your nervous system.",
+        ingredientsTitle: "Our Star Ingredients",
+        ing1Title: "Grass-Fed Tallow",
+        ing1Desc: "Rich in vitamins A, D, E and K, it is the moisturizer most compatible with your skin's biology.",
+        ing2Title: "Organic Oat",
+        ing2Desc: "An ancient natural soother that reduces inflammation and protects the skin barrier.",
+        ing3Title: "Raw Honey",
+        ing3Desc: "A powerful humectant packed with enzymes and antioxidants that instantly brighten your face.",
+        counter1Text: "Satisfied Clients",
+        counter2Text: "Natural Ingredients",
+        counter3Text: "Artisan Since",
+        catalogTitle: "Our Catalog",
+        btnBack: "Back to Categories",
+        btnDetails: "View Details",
+        btnWa: "WhatsApp",
+        comingSoon: "Coming soon in this category...",
+        tabBtnDesc: "Description",
+        tabBtnIngr: "Ingredients",
+        tabBtnProp: "Properties",
+        testimonialText: "\"Finally a cream my sensitive skin tolerates. The natural scent is incredible. It's a daily luxury.\"",
+        storyTitle: "Our Story",
+        storyP1: "My passion for natural wellness led me to seek real alternatives to industrial chemicals.",
+        storyP2: "Very Natural was born with the promise of delivering only products I would use on my own family. Handmade with love, honesty, and absolute respect for your skin."
+    }
+};
+
+let currentLang = 'es';
+let activeFilter = 'todo';
+let currentView = 'categories'; // 'categories' or 'products'
+const whatsappNumber = "1234567890"; // ← Reemplaza con el número real de Verónica
+
+// =====================================
+// STATIC DOM ELEMENTS TO TRANSLATE
+// =====================================
+const elementsToTranslate = {
+    heroTitle:       document.getElementById('hero-title'),
+    heroSubtitle:    document.getElementById('hero-subtitle'),
+    heroCta:         document.getElementById('hero-cta'),
+    ritual1Title:    document.getElementById('ritual-1-title'),
+    ritual1Desc:     document.getElementById('ritual-1-desc'),
+    ritual2Title:    document.getElementById('ritual-2-title'),
+    ritual2Desc:     document.getElementById('ritual-2-desc'),
+    ritual3Title:    document.getElementById('ritual-3-title'),
+    ritual3Desc:     document.getElementById('ritual-3-desc'),
+    ingredientsTitle:document.getElementById('ingredients-title'),
+    ing1Title:       document.getElementById('ing-1-title'),
+    ing1Desc:        document.getElementById('ing-1-desc'),
+    ing2Title:       document.getElementById('ing-2-title'),
+    ing2Desc:        document.getElementById('ing-2-desc'),
+    ing3Title:       document.getElementById('ing-3-title'),
+    ing3Desc:        document.getElementById('ing-3-desc'),
+    counter1Text:    document.getElementById('counter-1-text'),
+    counter2Text:    document.getElementById('counter-2-text'),
+    counter3Text:    document.getElementById('counter-3-text'),
+    catalogTitle:    document.getElementById('catalog-title'),
+    btnBack:         document.getElementById('text-back'),
+    tabBtnDesc:      document.getElementById('tab-btn-desc'),
+    tabBtnIngr:      document.getElementById('tab-btn-ingr'),
+    tabBtnProp:      document.getElementById('tab-btn-prop'),
+    testimonialText: document.getElementById('testimonial-text'),
+    storyTitle:      document.getElementById('story-title'),
+    storyP1:         document.getElementById('story-p1'),
+    storyP2:         document.getElementById('story-p2')
+};
+
+// =====================================
+// LANGUAGE TOGGLE
+// =====================================
+const btnEs = document.getElementById('btn-es');
+const btnEn = document.getElementById('btn-en');
+
+function setLanguage(lang) {
+    currentLang = lang;
+
+    if (lang === 'es') {
+        btnEs.classList.add('active');
+        btnEn.classList.remove('active');
+    } else {
+        btnEn.classList.add('active');
+        btnEs.classList.remove('active');
+    }
+
+    // Animate static text transitions
+    Object.keys(elementsToTranslate).forEach(key => {
+        const el = elementsToTranslate[key];
+        if (el) {
+            el.style.opacity = 0;
+            setTimeout(() => {
+                el.innerText = translations[lang][key];
+                el.style.opacity = 1;
+            }, 300);
+        }
+    });
+
+    // Re-render dynamic catalog with new language
+    renderLargeCategoryCards();
+    renderFilterButtons(activeFilter);
+    renderCatalog(activeFilter);
+
+    // Update modal if open
+    const modal = document.getElementById('product-modal');
+    const activeProductId = modal && modal.getAttribute('data-active-product');
+    if (modal && modal.classList.contains('show') && activeProductId) {
+        setTimeout(() => openModal(activeProductId), 320);
+    }
+
+    updateWhatsAppLinks();
+}
+
+btnEs.addEventListener('click', () => setLanguage('es'));
+btnEn.addEventListener('click', () => setLanguage('en'));
+
+// CSS transition for static text elements
+document.head.insertAdjacentHTML('beforeend', `<style>
+    #hero-title, #hero-subtitle, #hero-cta, [id^="ritual-"], [id^="ing-"],
+    #ingredients-title, #catalog-title, [id^="tab-btn"],
+    #testimonial-text, #story-title, #story-p1, #story-p2, [id^="counter-"] {
+        transition: opacity 0.3s ease;
+    }
+</style>`);
+
+// =====================================
+// WHATSAPP INTEGRATION
+// =====================================
+function updateWhatsAppLinks() {
+    const template = currentLang === 'es'
+        ? '¡Hola Verónica! Me interesa ordenar: '
+        : 'Hi Veronica! I want to order: ';
+
+    document.querySelectorAll('.btn-whatsapp').forEach(btn => {
+        const product = btn.getAttribute('data-product');
+        const message = encodeURIComponent(`${template}${product}`);
+        const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+        const clone = btn.cloneNode(true);
+        btn.parentNode.replaceChild(clone, btn);
+        clone.addEventListener('click', () => window.open(url, '_blank'));
+    });
+
+    const generalMsg = encodeURIComponent(
+        currentLang === 'es'
+            ? '¡Hola Verónica! Quisiera más información sobre los productos.'
+            : 'Hi Veronica! I would like more information about the products.'
+    );
+    const floatingUrl = `https://wa.me/${whatsappNumber}?text=${generalMsg}`;
+    document.getElementById('floating-wa').setAttribute('href', floatingUrl);
+    document.getElementById('footer-wa').setAttribute('href', floatingUrl);
+}
+
+updateWhatsAppLinks();
+
+// =====================================
+// NAVBAR SCROLL EFFECT
+// =====================================
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// =====================================
+// SCROLL REVEAL (Intersection Observer)
+// =====================================
+const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+        }
+    });
+}, { root: null, rootMargin: '0px', threshold: 0.15 });
+
+// =====================================
+// PRODUCT DATABASE
+// ─────────────────────────────────────
+// PARA AGREGAR UN NUEVO PRODUCTO:
+//  1. Añade un objeto en el array `products` (id, category, img, waProduct)
+//  2. Añade sus datos en `productData` tanto en 'es' como en 'en'
+// =====================================
+
+// Master list: defines which products appear and their category
+const products = [
+    {
+        id: 'prod1',
+        category: 'jabones',
+        img: 'assets/Producto_1.jpeg',
+        waProduct: { es: 'Mascarilla Jabón Avena', en: 'Oat Mask Soap' }
+    },
+    {
+        id: 'prod2',
+        category: 'jabones',
+        img: 'assets/Producto_2.jpeg',
+        waProduct: { es: 'Jabón Mascarilla Detox', en: 'Detox Mask Soap' }
+    }
+    // Agrega más productos aquí...
+];
+
+// Detailed bilingual content per product
+const productData = {
+    es: {
+        "prod1": {
+            name: "Mascarilla & Jabón de Avena, Leche y Miel",
+            price: "$4.99 USD",
+            size: "40g / 1.4 oz",
+            desc: `<p>Formulado artesanalmente con glicerina vegetal enriquecida, este lujoso jabón y mascarilla 2 en 1 combina la pureza de la leche de coco y cabra con avena natural y miel orgánica. Su delicada espuma limpia profundamente sin despojar a la piel de su humedad natural, mientras su aroma a lavanda transforma tu rutina en una experiencia de spa reconfortante.</p>
+                   <br><p><strong>Beneficios Clave:</strong></p>
+                   <ul>
+                       <li>Limpieza suave que respeta el manto hidrolipídico.</li>
+                       <li>Calma al instante las pieles sensibles o reactivas.</li>
+                       <li>Aporta una hidratación profunda y textura aterciopelada.</li>
+                       <li>Ideal para pieles secas o con textura irregular.</li>
+                   </ul>`,
+            ingr: `<p><strong>Ingredientes Destacados:</strong></p>
+                   <p>Glicerina vegetal, Leche de Coco, Leche de Cabra, Avena Sativa Natural, Miel Orgánica, Aceite Esencial de Lavanda.</p>
+                   <br><p><em>INCI: Cocos Nucifera (Coconut) Milk Glycerin, Goat Milk Glycerin, Avena Sativa Kernel Flour, Milk Powder, Mel, Lavandula Angustifolia Oil.</em></p>`,
+            prop: `<p><strong>Modo de Uso:</strong></p>
+                   <p>Aplica sobre la piel húmeda, masajea con suaves movimientos circulares y enjuaga con abundante agua tibia.</p>
+                   <br><p><strong>Advertencias:</strong></p>
+                   <p>Solo para uso externo. Evita el contacto con los ojos. Suspende su uso en caso de irritación. Mantener fuera del alcance de los niños.</p>`
+        },
+        "prod2": {
+            name: "Jabón Mascarilla Facial Detox",
+            price: "$4.99 USD",
+            size: "40g / 1.4 oz",
+            desc: `<p>Un tratamiento purificante de grado spa diseñado para revitalizar la piel estresada. Esta exquisita barra artesanal combina la frescura del Aloe Vera con el poder magnético del Carbón Activado y la luminosidad de la Cúrcuma.</p>
+                   <br><p><strong>Ideal para:</strong> Pieles mixtas, grasas o con tendencia a imperfecciones.</p>`,
+            ingr: `<p><strong>Propiedades de los Ingredientes:</strong></p>
+                   <ul style="padding-left: 1rem;">
+                       <li style="margin-bottom:.5rem"><strong>Carbón Activado:</strong> Absorbe impurezas y exceso de grasa.</li>
+                       <li style="margin-bottom:.5rem"><strong>Cúrcuma:</strong> Antioxidante que aporta luminosidad y mejora el tono.</li>
+                       <li style="margin-bottom:.5rem"><strong>Miel Cruda:</strong> Humectante natural que nutre en profundidad.</li>
+                       <li style="margin-bottom:.5rem"><strong>Aceite de Tea Tree:</strong> Refrescante y purificante.</li>
+                       <li style="margin-bottom:.5rem"><strong>Glicerina de Aloe Vera:</strong> Calma, hidrata y limpia con delicadeza.</li>
+                   </ul>`,
+            prop: `<p><strong>El Ritual de Uso:</strong></p>
+                   <p>Aplica sobre el rostro húmedo con suaves masajes circulares. <strong>Déjalo actuar de 1 a 3 minutos</strong> como mascarilla y enjuaga con agua tibia.</p>
+                   <p><em>Frecuencia recomendada: 2 a 4 veces por semana.</em></p>
+                   <br><p><strong>Advertencias:</strong></p>
+                   <p>Uso externo exclusivamente. Evita el contacto con los ojos. Mantener fuera del alcance de los niños.</p>`
+        }
+    },
+    en: {
+        "prod1": {
+            name: "Oat, Milk & Honey Mask & Soap",
+            price: "$4.99 USD",
+            size: "1.4 oz / 40g",
+            desc: `<p>Artisanally crafted with enriched vegetable glycerin, this luxurious 2-in-1 soap and mask combines the purity of coconut and goat milk with natural oats and organic honey. Its lavender scent transforms your routine into a comforting spa experience.</p>
+                   <br><p><strong>Key Benefits:</strong></p>
+                   <ul>
+                       <li>Gentle cleansing that respects your skin's hydrolipidic film.</li>
+                       <li>Instantly soothes sensitive or reactive skin.</li>
+                       <li>Provides deep hydration and a velvety texture.</li>
+                       <li>Ideal for dry or unevenly textured skin.</li>
+                   </ul>`,
+            ingr: `<p><strong>Key Ingredients:</strong></p>
+                   <p>Vegetable Glycerin, Coconut Milk, Goat Milk, Natural Avena Sativa, Organic Honey, Lavender Essential Oil.</p>
+                   <br><p><em>INCI: Cocos Nucifera (Coconut) Milk Glycerin, Goat Milk Glycerin, Avena Sativa Kernel Flour, Milk Powder, Mel, Lavandula Angustifolia Oil.</em></p>`,
+            prop: `<p><strong>How to Use:</strong></p>
+                   <p>Apply to damp skin, massage gently in circular motions, and rinse thoroughly with warm water.</p>
+                   <br><p><strong>Warnings:</strong></p>
+                   <p>For external use only. Avoid contact with eyes. Discontinue use if irritation occurs. Keep out of reach of children.</p>`
+        },
+        "prod2": {
+            name: "Detox Facial Mask Soap",
+            price: "$4.99 USD",
+            size: "1.4 oz / 40g",
+            desc: `<p>A spa-grade purifying treatment designed to revitalize stressed skin. This artisanal bar combines Aloe Vera with the magnetic power of Activated Charcoal and the luminosity of Turmeric.</p>
+                   <br><p><strong>Ideal for:</strong> Combination, oily, or blemish-prone skin.</p>`,
+            ingr: `<p><strong>Ingredient Properties:</strong></p>
+                   <ul style="padding-left: 1rem;">
+                       <li style="margin-bottom:.5rem"><strong>Activated Charcoal:</strong> Acts like a magnet to absorb impurities and excess oil.</li>
+                       <li style="margin-bottom:.5rem"><strong>Turmeric:</strong> A powerful antioxidant that adds luminosity and improves uneven tone.</li>
+                       <li style="margin-bottom:.5rem"><strong>Raw Honey:</strong> A natural humectant that conditions and deeply nourishes.</li>
+                       <li style="margin-bottom:.5rem"><strong>Tea Tree Essential Oil:</strong> Refreshing and purifying.</li>
+                       <li style="margin-bottom:.5rem"><strong>Aloe Vera Glycerin:</strong> Soothes, hydrates, and ensures a delicate cleanse.</li>
+                   </ul>`,
+            prop: `<p><strong>The Ritual:</strong></p>
+                   <p>Apply to a damp face with gentle circular massages. <strong>Leave on for 1 to 3 minutes</strong> as an intensive mask, then rinse with warm water.</p>
+                   <p><em>Recommended frequency: 2 to 4 times a week.</em></p>
+                   <br><p><strong>Warnings:</strong></p>
+                   <p>For external use only. Avoid contact with eyes. Keep out of reach of children.</p>`
+        }
+    }
+};
+
+// =====================================
+// CATALOG VIEW MANAGEMENT
+// =====================================
+const viewCategories = document.getElementById('catalog-categories-view');
+const viewProducts = document.getElementById('catalog-products-view');
+const btnBackCategories = document.getElementById('btn-back-categories');
+
+function showCategoriesView() {
+    currentView = 'categories';
+    viewProducts.classList.remove('active');
+    viewProducts.classList.add('hidden');
+    
+    setTimeout(() => {
+        viewCategories.classList.remove('hidden');
+        viewCategories.classList.add('active');
+    }, 300); // Wait for fade out
+}
+
+function showProductsView(categoryId) {
+    currentView = 'products';
+    activeFilter = categoryId;
+    
+    viewCategories.classList.remove('active');
+    viewCategories.classList.add('hidden');
+    
+    setTimeout(() => {
+        viewProducts.classList.remove('hidden');
+        viewProducts.classList.add('active');
+        renderFilterButtons(categoryId);
+        renderCatalog(categoryId);
+    }, 300); // Wait for fade out
+}
+
+if (btnBackCategories) {
+    btnBackCategories.addEventListener('click', showCategoriesView);
+}
+
+// =====================================
+// CATALOG FILTER CATEGORIES
+// =====================================
+// Category filter definitions with cover images
+const filterCategories = [
+    { id: 'todo',        es: 'Todo',        en: 'All',    img: 'assets/mujer_horizontal.png' },
+    { id: 'jabones',     es: 'Jabones',     en: 'Soaps',  img: 'assets/Portad_jabones.png' },
+    { id: 'mascarillas', es: 'Mascarillas', en: 'Masks',  img: 'assets/ing_oat.png' },
+    { id: 'kits',        es: 'Kits',        en: 'Kits',   img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80' },
+    { id: 'novedades',   es: 'Novedades',   en: 'New',    img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=500&q=80' }
+];
+
+function renderLargeCategoryCards() {
+    const container = document.getElementById('categories-grid');
+    if (!container) return;
+    container.innerHTML = '';
+
+    filterCategories.forEach((cat, index) => {
+        const card = document.createElement('div');
+        card.className = 'category-card-large scroll-reveal ' + (index > 0 ? 'delay-' + (index % 3) : '');
+        card.setAttribute('aria-label', cat[currentLang]);
+
+        if (cat.img) {
+            card.innerHTML = `
+                <div class="cat-bg" style="background-image: url('${cat.img}')"></div>
+                <div class="cat-overlay"></div>
+                <span class="cat-label">${cat[currentLang]}</span>
+            `;
+        } else {
+            card.innerHTML = `
+                <div class="cat-gradient"></div>
+                <div class="cat-overlay"></div>
+                <span class="cat-label">${cat[currentLang]}</span>
+            `;
+        }
+
+        card.addEventListener('click', () => {
+            showProductsView(cat.id);
+        });
+        container.appendChild(card);
+        
+        // Ensure scroll-reveal triggers for dynamic elements
+        if (typeof observer !== 'undefined') {
+            observer.observe(card);
+        }
+    });
+}
+
+function renderFilterButtons(selectedFilter) {
+    const container = document.getElementById('catalog-filters');
+    if (!container) return;
+    container.innerHTML = '';
+
+    filterCategories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'quick-filter-btn' + (cat.id === selectedFilter ? ' active' : '');
+        btn.setAttribute('data-filter', cat.id);
+        btn.textContent = cat[currentLang];
+
+        btn.addEventListener('click', () => {
+            activeFilter = cat.id;
+            renderFilterButtons(cat.id);
+            renderCatalog(cat.id);
+        });
+        container.appendChild(btn);
+    });
+}
+
+function renderCatalog(filter = 'todo') {
+    const grid = document.getElementById('catalog-grid');
+    if (!grid) return;
+    const t = translations[currentLang];
+    const filtered = filter === 'todo'
+        ? products
+        : products.filter(p => p.category === filter);
+
+    // Fade out
+    grid.style.opacity = '0';
+    grid.style.transform = 'translateY(12px)';
+
+    setTimeout(() => {
+        grid.innerHTML = '';
+
+        if (filtered.length === 0) {
+            const msg = document.createElement('p');
+            msg.className = 'no-products';
+            msg.textContent = t.comingSoon;
+            grid.appendChild(msg);
+        } else {
+            filtered.forEach((product, index) => {
+                const data = productData[currentLang][product.id];
+                if (!data) return;
+                const delayClass = index === 1 ? 'delay-1' : index === 2 ? 'delay-2' : '';
+                const waText = product.waProduct[currentLang];
+
+                const card = document.createElement('div');
+                card.className = `product-card ${delayClass}`;
+                card.innerHTML = `
+                    <img src="${product.img}" alt="${data.name}" class="product-img" data-product-id="${product.id}">
+                    <div class="product-info">
+                        <h3 class="product-name">${data.name}</h3>
+                        <p class="product-size">${data.size}</p>
+                        <p class="product-price">${data.price}</p>
+                        <div class="product-actions">
+                            <button class="btn btn-secondary btn-details" data-product-id="${product.id}">${t.btnDetails}</button>
+                            <button class="btn btn-terracotta btn-whatsapp" data-product="${waText}">${t.btnWa}</button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        initTiltEffect();
+        updateWhatsAppLinks();
+
+        // Fade in
+        grid.style.opacity = '1';
+        grid.style.transform = 'translateY(0)';
+    }, 280);
+}
+
+// =====================================
+// 3D TILT EFFECT (reusable)
+// =====================================
+function initTiltEffect() {
+    document.querySelectorAll('#catalog-grid .product-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const rotateX = (((e.clientY - rect.top)  / rect.height) - 0.5) * -12;
+            const rotateY = (((e.clientX - rect.left) / rect.width)  - 0.5) *  12;
+            card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+        });
+    });
+}
+
+// =====================================
+// MODAL: open / close
+// =====================================
+function openModal(productId) {
+    const modal     = document.getElementById('product-modal');
+    const modalImg  = document.getElementById('modal-img');
+    const modalTitle= document.getElementById('modal-title');
+    const modalPrice= document.getElementById('modal-price');
+    const tabDesc   = document.getElementById('modal-desc');
+    const tabIngr   = document.getElementById('modal-ingr');
+    const tabProp   = document.getElementById('modal-prop');
+    if (!modal) return;
+
+    const data    = productData[currentLang][productId];
+    const product = products.find(p => p.id === productId);
+    if (!data || !product) return;
+
+    modal.setAttribute('data-active-product', productId);
+    modalTitle.textContent = data.name;
+    modalPrice.textContent = data.price;
+    modalImg.src = product.img;
+    tabDesc.innerHTML = data.desc;
+    tabIngr.innerHTML = data.ingr;
+    tabProp.innerHTML = data.prop;
+
+    // Reset tabs to first tab
+    document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+    document.querySelectorAll('.tab-content').forEach((c, i) => c.classList.toggle('active', i === 0));
+
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+// =====================================
+// DOM CONTENT LOADED
+// =====================================
+document.addEventListener('DOMContentLoaded', () => {
+
+    // ── Hero reveal ──
+    setTimeout(() => {
+        document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('visible'));
+    }, 100);
+
+    // ── Scroll reveal observer ──
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+    // ── Typewriter ──
+    const typewriterEl = document.querySelector('.typewriter-target');
+    if (typewriterEl) {
+        const fullText = typewriterEl.textContent;
+        typewriterEl.textContent = '';
+        typewriterEl.classList.add('typewriter-cursor');
+        let charIndex = 0;
+        setTimeout(() => {
+            const iv = setInterval(() => {
+                typewriterEl.textContent += fullText.charAt(charIndex++);
+                if (charIndex >= fullText.length) {
+                    clearInterval(iv);
+                    setTimeout(() => typewriterEl.classList.remove('typewriter-cursor'), 1500);
+                }
+            }, 50);
+        }, 1200);
+    }
+
+    // ── Animated Counters ──
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target'));
+            const start = performance.now();
+            const animate = (now) => {
+                const p = Math.min((now - start) / 2000, 1);
+                const ease = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(ease * target).toLocaleString();
+                if (p < 1) requestAnimationFrame(animate);
+            };
+            requestAnimationFrame(animate);
+            counterObserver.unobserve(el);
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter-number').forEach(el => counterObserver.observe(el));
+
+    // ── Scroll arrow ──
+    document.querySelector('.scroll-down-arrow')?.addEventListener('click', () => {
+        document.getElementById('ritual')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // ── Render catalog & filters ──
+    renderLargeCategoryCards();
+    showCategoriesView();
+
+    // ── Modal: event delegation on catalog grid ──
+    const modal    = document.getElementById('product-modal');
+    const closeBtn = document.querySelector('.close-modal');
+    const catalogGrid = document.getElementById('catalog-grid');
+
+    if (catalogGrid) {
+        catalogGrid.addEventListener('click', (e) => {
+            const target = e.target.closest('.btn-details, .product-img');
+            if (target) {
+                const id = target.getAttribute('data-product-id');
+                if (id) openModal(id);
+            }
+        });
+    }
+
+    const closeModal = () => {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    };
+
+    closeBtn?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    // ── Tabs ──
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(btn.getAttribute('data-target'))?.classList.add('active');
+        });
+    });
+});
