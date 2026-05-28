@@ -243,22 +243,25 @@ const products = [
 const productData = {
     es: {
         "prod1": {
-            name: "Mascarilla & Jabón de Avena, Leche y Miel",
+            name: "Jabón facial Mascarilla 2 en 1",
             price: "$4.99 USD",
             size: "40g / 1.4 oz",
-            desc: `<p>Formulado artesanalmente con glicerina vegetal enriquecida, este lujoso jabón y mascarilla 2 en 1 combina la pureza de la leche de coco y cabra con avena natural y miel orgánica. Su delicada espuma limpia profundamente sin despojar a la piel de su humedad natural, mientras su aroma a lavanda transforma tu rutina en una experiencia de spa reconfortante.</p>
-                   <br><p><strong>Beneficios Clave:</strong></p>
-                   <ul>
-                       <li>Limpieza suave que respeta el manto hidrolipídico.</li>
-                       <li>Calma al instante las pieles sensibles o reactivas.</li>
-                       <li>Aporta una hidratación profunda y textura aterciopelada.</li>
-                       <li>Ideal para pieles secas o con textura irregular.</li>
-                   </ul>`,
+            desc: `<p><strong>Jabón Mascarilla Facial Artesanal 2 en 1</strong></p>
+                   <p>Nuestro Jabón Mascarilla Facial 2 en 1 está elaborado artesanalmente con glicerina 100% vegetal enriquecida con leche de coco y leche de cabra, combinado con avena, leche, miel y un delicado toque de aceite esencial de lavanda.</p>
+                   <p>Su fórmula cremosa limpia suavemente mientras funciona como mascarilla facial, ayudando a dejar la piel con una sensación suave, nutrida y confortable.</p>
+                   <br><p><strong>Modo de Uso:</strong></p>
+                   <p>Aplicar sobre la piel húmeda, masajear con suaves movimientos circulares, dejar actuar unos minutos como mascarilla. Luego enjuagar con abundante agua tibia.</p>`,
             ingr: `<p><strong>Ingredientes Destacados:</strong></p>
-                   <p>Glicerina vegetal, Leche de Coco, Leche de Cabra, Avena Sativa Natural, Miel Orgánica, Aceite Esencial de Lavanda.</p>
+                   <p>Glicerina vegetal 100%, Leche de Coco, Leche de Cabra, Avena Sativa Natural, Leche, Miel Orgánica, Aceite Esencial de Lavanda.</p>
                    <br><p><em>INCI: Cocos Nucifera (Coconut) Milk Glycerin, Goat Milk Glycerin, Avena Sativa Kernel Flour, Milk Powder, Mel, Lavandula Angustifolia Oil.</em></p>`,
-            prop: `<p><strong>Modo de Uso:</strong></p>
-                   <p>Aplica sobre la piel húmeda, masajea con suaves movimientos circulares y enjuaga con abundante agua tibia.</p>
+            prop: `<p><strong>Beneficios Principales:</strong></p>
+                   <ul>
+                       <li><strong>Limpieza suave:</strong> Respeta el manto hidrolipídico natural de la piel.</li>
+                       <li><strong>Calma instantánea:</strong> Ideal para pieles sensibles o reactivas.</li>
+                       <li><strong>Hidratación profunda:</strong> Aporta una textura aterciopelada y nutrida.</li>
+                       <li><strong>Doble función:</strong> Actúa como jabón limpiador y mascarilla nutritiva.</li>
+                       <li><strong>Apto para pieles secas:</strong> Especialmente recomendado para pieles con textura irregular o deshidratadas.</li>
+                   </ul>
                    <br><p><strong>Advertencias:</strong></p>
                    <p>Solo para uso externo. Evita el contacto con los ojos. Suspende su uso en caso de irritación. Mantener fuera del alcance de los niños.</p>`
         },
@@ -285,22 +288,25 @@ const productData = {
     },
     en: {
         "prod1": {
-            name: "Oat, Milk & Honey Mask & Soap",
+            name: "Facial Mask Soap 2-in-1",
             price: "$4.99 USD",
             size: "1.4 oz / 40g",
-            desc: `<p>Artisanally crafted with enriched vegetable glycerin, this luxurious 2-in-1 soap and mask combines the purity of coconut and goat milk with natural oats and organic honey. Its lavender scent transforms your routine into a comforting spa experience.</p>
-                   <br><p><strong>Key Benefits:</strong></p>
-                   <ul>
-                       <li>Gentle cleansing that respects your skin's hydrolipidic film.</li>
-                       <li>Instantly soothes sensitive or reactive skin.</li>
-                       <li>Provides deep hydration and a velvety texture.</li>
-                       <li>Ideal for dry or unevenly textured skin.</li>
-                   </ul>`,
+            desc: `<p><strong>Artisanal 2-in-1 Facial Mask Soap</strong></p>
+                   <p>Our 2-in-1 Facial Mask Soap is handcrafted with 100% vegetable glycerin enriched with coconut milk and goat milk, combined with oats, milk, honey, and a delicate touch of lavender essential oil.</p>
+                   <p>Its creamy formula cleanses gently while functioning as a facial mask, helping to leave skin with a soft, nourished, and comfortable feeling.</p>
+                   <br><p><strong>How to Use:</strong></p>
+                   <p>Apply to damp skin, massage with gentle circular motions, leave acting for a few minutes as a mask. Then rinse thoroughly with warm water.</p>`,
             ingr: `<p><strong>Key Ingredients:</strong></p>
-                   <p>Vegetable Glycerin, Coconut Milk, Goat Milk, Natural Avena Sativa, Organic Honey, Lavender Essential Oil.</p>
+                   <p>100% Vegetable Glycerin, Coconut Milk, Goat Milk, Natural Avena Sativa, Milk, Organic Honey, Lavender Essential Oil.</p>
                    <br><p><em>INCI: Cocos Nucifera (Coconut) Milk Glycerin, Goat Milk Glycerin, Avena Sativa Kernel Flour, Milk Powder, Mel, Lavandula Angustifolia Oil.</em></p>`,
-            prop: `<p><strong>How to Use:</strong></p>
-                   <p>Apply to damp skin, massage gently in circular motions, and rinse thoroughly with warm water.</p>
+            prop: `<p><strong>Main Benefits:</strong></p>
+                   <ul>
+                       <li><strong>Gentle Cleansing:</strong> Respects the skin's natural hydrolipidic barrier.</li>
+                       <li><strong>Instant Soothing:</strong> Ideal for sensitive or reactive skin.</li>
+                       <li><strong>Deep Hydration:</strong> Provides a velvety, nourished texture.</li>
+                       <li><strong>Dual Function:</strong> Works as both a gentle cleanser and nourishing facial mask.</li>
+                       <li><strong>For Dry Skin:</strong> Especially recommended for dry or unevenly textured skin.</li>
+                   </ul>
                    <br><p><strong>Warnings:</strong></p>
                    <p>For external use only. Avoid contact with eyes. Discontinue use if irritation occurs. Keep out of reach of children.</p>`
         },
@@ -370,8 +376,7 @@ if (btnBackCategories) {
 // Category filter definitions with cover images
 const filterCategories = [
     { id: 'todo',        es: 'Todo',        en: 'All',    img: 'assets/mujer_horizontal.png' },
-    { id: 'jabones',     es: 'Jabones',     en: 'Soaps',  img: 'assets/Portad_jabones.png' },
-    { id: 'mascarillas', es: 'Mascarillas', en: 'Masks',  img: 'assets/ing_oat.png' },
+    { id: 'jabones',     es: 'Jabones',     en: 'Soaps',  img: 'assets/Portad_jabones.jpeg' },
     { id: 'kits',        es: 'Kits',        en: 'Kits',   img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80' },
     { id: 'novedades',   es: 'Novedades',   en: 'New',    img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=500&q=80' }
 ];
@@ -514,6 +519,8 @@ function openModal(productId) {
     const tabDesc   = document.getElementById('modal-desc');
     const tabIngr   = document.getElementById('modal-ingr');
     const tabProp   = document.getElementById('modal-prop');
+    const modalInfo = document.querySelector('.modal-info');
+    const modalContent = document.querySelector('.modal-content');
     if (!modal) return;
 
     const data    = productData[currentLang][productId];
@@ -531,6 +538,10 @@ function openModal(productId) {
     // Reset tabs to first tab
     document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
     document.querySelectorAll('.tab-content').forEach((c, i) => c.classList.toggle('active', i === 0));
+
+    // Reiniciar scroll position de modal-info y modal-content
+    if (modalInfo) modalInfo.scrollTop = 0;
+    if (modalContent) modalContent.scrollTop = 0;
 
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
@@ -613,10 +624,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = () => {
         modal.classList.remove('show');
         document.body.style.overflow = 'auto';
+        // Reiniciar scroll al cerrar
+        const modalInfo = document.querySelector('.modal-info');
+        const modalContent = document.querySelector('.modal-content');
+        if (modalInfo) modalInfo.scrollTop = 0;
+        if (modalContent) modalContent.scrollTop = 0;
     };
 
     closeBtn?.addEventListener('click', closeModal);
     modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    // ── Hamburger Menu for Mobile ──
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+    // Toggle mobile menu
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu?.classList.toggle('active');
+        });
+    }
+
+    // Close menu when clicking close button
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', () => {
+            hamburgerBtn?.classList.remove('active');
+            mobileMenu?.classList.remove('active');
+        });
+    }
+
+    // Close menu when clicking a link
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburgerBtn?.classList.remove('active');
+            mobileMenu?.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (mobileMenu?.classList.contains('active') && 
+            !mobileMenu.contains(e.target) && 
+            !hamburgerBtn?.contains(e.target)) {
+            hamburgerBtn?.classList.remove('active');
+            mobileMenu?.classList.remove('active');
+        }
+    });
 
     // ── Tabs ──
     document.querySelectorAll('.tab-btn').forEach(btn => {

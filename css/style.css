@@ -1080,6 +1080,125 @@ html {
     color: #000;
 }
 
+/* ========== HAMBURGER MENU STYLES ========== */
+
+/* Navigation Layout - flexbox para mejor estructura */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Hamburger Button - solo visible en móviles */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 101;
+}
+
+.hamburger-btn span {
+    width: 25px;
+    height: 2.5px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .hamburger-btn span {
+    background-color: var(--color-text);
+}
+
+.hamburger-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -10px);
+}
+
+/* Mobile Menu Slide */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(96, 108, 56, 0.98) 0%, rgba(188, 108, 37, 0.95) 100%);
+    z-index: 100;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu-content {
+    padding: 80px 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 102;
+    transition: transform 0.2s ease;
+}
+
+.mobile-menu-close:hover {
+    transform: scale(1.2);
+}
+
+.mobile-menu-link {
+    color: var(--color-white);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-link:hover {
+    padding-left: 1rem;
+    color: var(--color-tallow);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Hamburger - Show on mobile (max-width: 900px) */
+@media (max-width: 900px) {
+    .hamburger-btn {
+        display: flex;
+    }
+
+    .lang-toggle {
+        order: 2;
+        margin-right: 0.5rem;
+    }
+
+    .mobile-menu {
+        right: -100%;
+    }
+}
+
 .modal-body {
     display: flex;
     position: relative; /* Added for absolute positioning of text info */
