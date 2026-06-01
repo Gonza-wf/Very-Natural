@@ -274,7 +274,7 @@ html {
 
 /* Trust Counters */
 .counters-section {
-    padding: 3rem 0; /* Menos espacio vertical */
+    padding: 1.5rem 0; /* Espacio vertical más delgado y elegante */
     background-color: var(--color-sage);
 }
 
@@ -878,6 +878,148 @@ html {
 
 .delay-1 { transition-delay: 0.2s; }
 .delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
+
+/* FAQ Section */
+.faq-section {
+    padding: 6rem 0;
+    background-color: var(--color-light);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--color-text);
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.3s;
+}
+
+.faq-question:hover {
+    color: var(--color-terra);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer p {
+    padding-bottom: 1.5rem;
+    color: rgba(0,0,0,0.7);
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+}
+
+/* Instagram Section */
+.instagram-section {
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.ig-handle {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: var(--color-terra);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.ig-handle:hover {
+    opacity: 0.8;
+}
+
+.ig-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.ig-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: block;
+}
+
+.ig-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ig-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ig-overlay span {
+    color: white;
+    font-size: 2rem;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.ig-item:hover img {
+    transform: scale(1.05);
+}
+
+.ig-item:hover .ig-overlay {
+    opacity: 1;
+}
+
+.ig-item:hover .ig-overlay span {
+    transform: scale(1);
+}
 
 /* Responsive Design */
 @media (max-width: 900px) {

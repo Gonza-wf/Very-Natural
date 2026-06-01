@@ -33,7 +33,15 @@ const translations = {
         testimonialText: "\"Finalmente una crema que mi piel sensible tolera. El olor a natural es increíble. Es un lujo para todos los días.\"",
         storyTitle: "Nuestra Historia",
         storyP1: "Mi pasión por el bienestar natural me llevó a buscar alternativas reales a los químicos industriales.",
-        storyP2: "Very Natural nace con la promesa de entregar solo productos que yo misma usaría en mi familia. Hecho a mano, con amor, honestidad y respeto absoluto por tu piel."
+        storyP2: "Very Natural nace con la promesa de entregar solo productos que yo misma usaría en mi familia. Hecho a mano, con amor, honestidad y respeto absoluto por tu piel.",
+        faqTitle: "Preguntas Frecuentes",
+        faqQ1: "¿Es apto para pieles sensibles o con rosácea?",
+        faqA1: "Sí, nuestras fórmulas están diseñadas específicamente para calmar pieles reactivas utilizando ingredientes 100% naturales sin fragancias sintéticas.",
+        faqQ2: "¿Cuánto duran los productos?",
+        faqA2: "Al no usar conservantes artificiales, recomendamos usar los productos dentro de los 6 meses posteriores a su apertura. Mantenlos en un lugar fresco y seco.",
+        faqQ3: "¿Realizan envíos a todo el país?",
+        faqA3: "Sí, realizamos envíos nacionales. Comunícate por WhatsApp para coordinar el envío de tu pedido a la puerta de tu casa.",
+        igTitle: "Síguenos en Instagram"
     },
     en: {
         heroTitle: "Ancestral skin nourishment.",
@@ -66,7 +74,15 @@ const translations = {
         testimonialText: "\"Finally a cream my sensitive skin tolerates. The natural scent is incredible. It's a daily luxury.\"",
         storyTitle: "Our Story",
         storyP1: "My passion for natural wellness led me to seek real alternatives to industrial chemicals.",
-        storyP2: "Very Natural was born with the promise of delivering only products I would use on my own family. Handmade with love, honesty, and absolute respect for your skin."
+        storyP2: "Very Natural was born with the promise of delivering only products I would use on my own family. Handmade with love, honesty, and absolute respect for your skin.",
+        faqTitle: "Frequently Asked Questions",
+        faqQ1: "Is it suitable for sensitive skin or rosacea?",
+        faqA1: "Yes, our formulas are specifically designed to soothe reactive skin using 100% natural ingredients without synthetic fragrances.",
+        faqQ2: "How long do the products last?",
+        faqA2: "Since we do not use artificial preservatives, we recommend using the products within 6 months after opening. Keep them in a cool, dry place.",
+        faqQ3: "Do you ship nationwide?",
+        faqA3: "Yes, we offer nationwide shipping. Contact us via WhatsApp to coordinate the delivery of your order right to your doorstep.",
+        igTitle: "Follow us on Instagram"
     }
 };
 
@@ -106,7 +122,15 @@ const elementsToTranslate = {
     testimonialText: document.getElementById('testimonial-text'),
     storyTitle:      document.getElementById('story-title'),
     storyP1:         document.getElementById('story-p1'),
-    storyP2:         document.getElementById('story-p2')
+    storyP2:         document.getElementById('story-p2'),
+    faqTitle:        document.getElementById('faq-title'),
+    faqQ1:           document.getElementById('faq-q1'),
+    faqA1:           document.getElementById('faq-a1'),
+    faqQ2:           document.getElementById('faq-q2'),
+    faqA2:           document.getElementById('faq-a2'),
+    faqQ3:           document.getElementById('faq-q3'),
+    faqA3:           document.getElementById('faq-a3'),
+    igTitle:         document.getElementById('ig-title')
 };
 
 // =====================================
@@ -496,14 +520,21 @@ function renderCatalog(filter = 'todo') {
 // =====================================
 function initTiltEffect() {
     document.querySelectorAll('#catalog-grid .product-card').forEach(card => {
+        // Agregar transición suave durante hover
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'transform 0.1s ease-out';
+        });
+
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
-            const rotateX = (((e.clientY - rect.top)  / rect.height) - 0.5) * -12;
-            const rotateY = (((e.clientX - rect.left) / rect.width)  - 0.5) *  12;
-            card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+            const rotateX = (((e.clientY - rect.top)  / rect.height) - 0.5) * -8;
+            const rotateY = (((e.clientX - rect.left) / rect.width)  - 0.5) *  8;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
         });
+
         card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+            card.style.transition = 'transform 0.3s ease-out';
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
         });
     });
 }
@@ -620,6 +651,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ── FAQ Accordion ──
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.parentElement;
+            
+            // Close others
+            document.querySelectorAll('.faq-item').forEach(otherItem => {
+                if(otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current
+            item.classList.toggle('active');
+        });
+    });
 
     const closeModal = () => {
         modal.classList.remove('show');

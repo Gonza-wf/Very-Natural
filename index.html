@@ -70,32 +70,6 @@
         </div>
     </header>
 
-    <!-- Ritual Section -->
-    <section id="ritual" class="ritual-section">
-        <div class="container">
-            <div class="grid-3">
-                <div class="ritual-card scroll-reveal">
-                    <div class="icon">✨</div>
-                    <h3 id="ritual-1-title">Nutrición Profunda</h3>
-                    <p id="ritual-1-desc">El Tallow imita la barrera natural de la piel permitiendo una absorción inmediata llena de vitaminas A, D, E y K.</p>
-                </div>
-                <div class="ritual-card scroll-reveal delay-1">
-                    <div class="icon">🌿</div>
-                    <h3 id="ritual-2-title">Lotes Pequeños (Small Batch)</h3>
-                    <p id="ritual-2-desc">Garantía de frescura. Elaborado esta misma semana sin conservantes químicos.</p>
-                </div>
-                <div class="ritual-card scroll-reveal delay-2">
-                    <div class="icon">♻️</div>
-                    <h3 id="ritual-3-title">Filosofía Zero Waste</h3>
-                    <p id="ritual-3-desc">Respeto absoluto por la naturaleza utilizando recursos orgánicos y empaques amigables.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Divider -->
-    <div class="section-divider"><span>🌿</span></div>
-
     <!-- Trust Counters -->
     <section class="counters-section">
         <div class="container">
@@ -118,6 +92,37 @@
 
     <!-- Divider -->
     <div class="section-divider"><span>✨</span></div>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="catalog-section">
+        <div class="container">
+            <h2 id="catalog-title" class="section-title scroll-reveal">Nuestro Catálogo</h2>
+            
+            <!-- Vista de Categorías (Tarjetas Grandes) -->
+            <div id="catalog-categories-view" class="catalog-view active">
+                <div id="categories-grid" class="categories-large-grid"></div>
+            </div>
+
+            <!-- Vista de Productos -->
+            <div id="catalog-products-view" class="catalog-view hidden">
+                <div class="products-header">
+                    <button id="btn-back-categories" class="btn-back">
+                        <span class="back-icon">←</span> <span id="text-back">Volver a Categorías</span>
+                    </button>
+                </div>
+                
+                <!-- Filter buttons (quick selection) -->
+                <div id="catalog-filters" class="catalog-filters-quick"></div>
+                
+                <!-- Product grid -->
+                <div id="catalog-grid" class="grid-catalog"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"><span>♦</span></div>
 
     <!-- Ingredients Section -->
     <section id="ingredients" class="ingredients-section">
@@ -152,46 +157,31 @@
     <!-- Divider -->
     <div class="section-divider"><span>🍃</span></div>
 
-    <!-- Catalog Section -->
-    <section id="catalog" class="catalog-section">
+    <!-- Ritual Section -->
+    <section id="ritual" class="ritual-section">
         <div class="container">
-            <h2 id="catalog-title" class="section-title scroll-reveal">Nuestro Catálogo</h2>
-            
-            <!-- Vista de Categorías (Tarjetas Grandes) -->
-            <div id="catalog-categories-view" class="catalog-view active">
-                <div id="categories-grid" class="categories-large-grid"></div>
-            </div>
-
-            <!-- Vista de Productos -->
-            <div id="catalog-products-view" class="catalog-view hidden">
-                <div class="products-header">
-                    <button id="btn-back-categories" class="btn-back">
-                        <span class="back-icon">←</span> <span id="text-back">Volver a Categorías</span>
-                    </button>
+            <div class="grid-3">
+                <div class="ritual-card scroll-reveal">
+                    <div class="icon">✨</div>
+                    <h3 id="ritual-1-title">Nutrición Profunda</h3>
+                    <p id="ritual-1-desc">El Tallow imita la barrera natural de la piel permitiendo una absorción inmediata llena de vitaminas A, D, E y K.</p>
                 </div>
-                
-                <!-- Filter buttons (quick selection) -->
-                <div id="catalog-filters" class="catalog-filters-quick"></div>
-                
-                <!-- Product grid -->
-                <div id="catalog-grid" class="grid-catalog"></div>
+                <div class="ritual-card scroll-reveal delay-1">
+                    <div class="icon">🌿</div>
+                    <h3 id="ritual-2-title">Lotes Pequeños (Small Batch)</h3>
+                    <p id="ritual-2-desc">Garantía de frescura. Elaborado esta misma semana sin conservantes químicos.</p>
+                </div>
+                <div class="ritual-card scroll-reveal delay-2">
+                    <div class="icon">♻️</div>
+                    <h3 id="ritual-3-title">Filosofía Zero Waste</h3>
+                    <p id="ritual-3-desc">Respeto absoluto por la naturaleza utilizando recursos orgánicos y empaques amigables.</p>
+                </div>
             </div>
-
         </div>
     </section>
 
     <!-- Divider -->
-    <div class="section-divider"><span>♦</span></div>
-
-    <!-- Testimonial Section -->
-    <section class="testimonial-section">
-        <div class="container">
-            <div class="testimonial-card scroll-reveal">
-                <p id="testimonial-text" class="quote">"Finalmente una crema que mi piel sensible tolera. El olor a natural es increíble. Es un lujo para todos los días."</p>
-                <p class="author">— Sarah T., Texas</p>
-            </div>
-        </div>
-    </section>
+    <div class="section-divider"><span>🌿</span></div>
 
     <!-- Story Section -->
     <section id="story" class="story-section">
@@ -204,6 +194,78 @@
                 <p id="story-p1">Mi pasión por el bienestar natural me llevó a buscar alternativas reales a los químicos industriales.</p>
                 <p id="story-p2">Very Natural nace con la promesa de entregar solo productos que yo misma usaría en mi familia. Hecho a mano, con amor, honestidad y respeto absoluto por tu piel.</p>
                 <p class="signature">— Verónica</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-card scroll-reveal">
+                <p id="testimonial-text" class="quote">"Finalmente una crema que mi piel sensible tolera. El olor a natural es increíble. Es un lujo para todos los días."</p>
+                <p class="author">— Sarah T., Texas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 id="faq-title" class="section-title scroll-reveal">Preguntas Frecuentes</h2>
+            <div class="faq-list">
+                <div class="faq-item scroll-reveal">
+                    <button class="faq-question">
+                        <span id="faq-q1">¿Es apto para pieles sensibles o con rosácea?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p id="faq-a1">Sí, nuestras fórmulas están diseñadas específicamente para calmar pieles reactivas utilizando ingredientes 100% naturales sin fragancias sintéticas.</p>
+                    </div>
+                </div>
+                <div class="faq-item scroll-reveal delay-1">
+                    <button class="faq-question">
+                        <span id="faq-q2">¿Cuánto duran los productos?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p id="faq-a2">Al no usar conservantes artificiales, recomendamos usar los productos dentro de los 6 meses posteriores a su apertura. Mantenlos en un lugar fresco y seco.</p>
+                    </div>
+                </div>
+                <div class="faq-item scroll-reveal delay-2">
+                    <button class="faq-question">
+                        <span id="faq-q3">¿Realizan envíos a todo el país?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p id="faq-a3">Sí, realizamos envíos nacionales. Comunícate por WhatsApp para coordinar el envío de tu pedido a la puerta de tu casa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram-section">
+        <div class="container">
+            <h2 id="ig-title" class="section-title scroll-reveal">Síguenos en Instagram</h2>
+            <a href="https://instagram.com" target="_blank" class="ig-handle scroll-reveal delay-1">@VeryNatural</a>
+            <div class="ig-grid">
+                <a href="https://instagram.com" target="_blank" class="ig-item scroll-reveal delay-1">
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=400&q=80" alt="Instagram 1">
+                    <div class="ig-overlay"><span>♥</span></div>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="ig-item scroll-reveal delay-2">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=400&q=80" alt="Instagram 2">
+                    <div class="ig-overlay"><span>♥</span></div>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="ig-item scroll-reveal delay-3">
+                    <img src="https://images.unsplash.com/photo-1556228720-192a6af4e86e?auto=format&fit=crop&w=400&q=80" alt="Instagram 3">
+                    <div class="ig-overlay"><span>♥</span></div>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="ig-item scroll-reveal delay-4">
+                    <img src="https://images.unsplash.com/photo-1596755389378-c11d66832c3e?auto=format&fit=crop&w=400&q=80" alt="Instagram 4">
+                    <div class="ig-overlay"><span>♥</span></div>
+                </a>
             </div>
         </div>
     </section>
