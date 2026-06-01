@@ -251,7 +251,7 @@ const products = [
     {
         id: 'prod1',
         category: 'jabones',
-        img: 'assets/Producto_1.jpeg',
+        img: 'assets/Producto_1.png',
         waProduct: { es: 'Mascarilla Jabón Avena', en: 'Oat Mask Soap' }
     },
     {
@@ -259,6 +259,12 @@ const products = [
         category: 'jabones',
         img: 'assets/Producto_2.jpeg',
         waProduct: { es: 'Jabón Mascarilla Detox', en: 'Detox Mask Soap' }
+    },
+    {
+        id: 'prod3',
+        category: 'cremas',
+        img: 'assets/Portada_cremas.jpeg',
+        waProduct: { es: 'Crema Vainilla y Manzanilla', en: 'Vanilla & Chamomile Cream' }
     }
     // Agrega más productos aquí...
 ];
@@ -288,6 +294,14 @@ const productData = {
                    </ul>
                    <br><p><strong>Advertencias:</strong></p>
                    <p>Solo para uso externo. Evita el contacto con los ojos. Suspende su uso en caso de irritación. Mantener fuera del alcance de los niños.</p>`
+        },
+        "prod3": {
+            name: "Vainilla y Manzanilla",
+            price: "Consultar precio",
+            size: "Varias presentaciones",
+            desc: `<p>Próximamente más información sobre esta deliciosa crema natural de Vainilla y Manzanilla.</p>`,
+            ingr: `<p>Información de ingredientes en actualización.</p>`,
+            prop: `<p>Propiedades en actualización.</p>`
         },
         "prod2": {
             name: "Jabón Mascarilla Facial Detox",
@@ -353,6 +367,14 @@ const productData = {
                    <p><em>Recommended frequency: 2 to 4 times a week.</em></p>
                    <br><p><strong>Warnings:</strong></p>
                    <p>For external use only. Avoid contact with eyes. Keep out of reach of children.</p>`
+        },
+        "prod3": {
+            name: "Vanilla and Chamomile",
+            price: "Check price",
+            size: "Various sizes",
+            desc: `<p>More information about this delicious natural Vanilla and Chamomile cream coming soon.</p>`,
+            ingr: `<p>Ingredient information updating.</p>`,
+            prop: `<p>Properties updating.</p>`
         }
     }
 };
@@ -400,7 +422,9 @@ if (btnBackCategories) {
 // Category filter definitions with cover images
 const filterCategories = [
     { id: 'todo',        es: 'Todo',        en: 'All',    img: 'assets/mujer_horizontal.png' },
-    { id: 'jabones',     es: 'Jabones',     en: 'Soaps',  img: 'assets/Portad_jabones.jpeg' },
+    { id: 'cremas',      es: 'Cremas',      en: 'Creams', img: 'assets/Portada_cremas.jpeg' },
+    { id: 'jabones',     es: 'Jabones',     en: 'Soaps',  img: 'assets/Portad_jabones.png' },
+    { id: 'mascarillas', es: 'Mascarillas', en: 'Masks',  img: 'assets/ing_oat.png' },
     { id: 'kits',        es: 'Kits',        en: 'Kits',   img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80' },
     { id: 'novedades',   es: 'Novedades',   en: 'New',    img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=500&q=80' }
 ];
