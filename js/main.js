@@ -257,13 +257,13 @@ const products = [
     {
         id: 'prod2',
         category: 'jabones',
-        img: 'assets/Producto_2.jpeg',
+        img: 'assets/Producto_2.png',
         waProduct: { es: 'Jabón Mascarilla Detox', en: 'Detox Mask Soap' }
     },
     {
         id: 'prod3',
         category: 'cremas',
-        img: 'assets/Portada_cremas.jpeg',
+        img: 'assets/crema1.png',
         waProduct: { es: 'Crema Vainilla y Manzanilla', en: 'Vanilla & Chamomile Cream' }
     }
     // Agrega más productos aquí...
@@ -421,12 +421,12 @@ if (btnBackCategories) {
 // =====================================
 // Category filter definitions with cover images
 const filterCategories = [
-    { id: 'todo',        es: 'Todo',        en: 'All',    img: 'assets/mujer_horizontal.png' },
     { id: 'cremas',      es: 'Cremas',      en: 'Creams', img: 'assets/Portada_cremas.jpeg' },
-    { id: 'jabones',     es: 'Jabones',     en: 'Soaps',  img: 'assets/Portad_jabones.png' },
+    { id: 'jabones',     es: 'Jabones',     en: 'Soaps',  img: 'assets/Portad_jabones.jpeg' },
     { id: 'mascarillas', es: 'Mascarillas', en: 'Masks',  img: 'assets/ing_oat.png' },
     { id: 'kits',        es: 'Kits',        en: 'Kits',   img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80' },
-    { id: 'novedades',   es: 'Novedades',   en: 'New',    img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=500&q=80' }
+    { id: 'novedades',   es: 'Novedades',   en: 'New',    img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=500&q=80' },
+    { id: 'todo',        es: 'Todo',        en: 'All',    img: 'assets/mujer_horizontal.png' }
 ];
 
 function renderLargeCategoryCards() {
