@@ -263,7 +263,7 @@ const products = [
     {
         id: 'prod3',
         category: 'cremas',
-        img: 'assets/crema1.png',
+        img: 'assets/Crema1.png',
         waProduct: { es: 'Crema Vainilla y Manzanilla', en: 'Vanilla & Chamomile Cream' }
     }
     // Agrega más productos aquí...
@@ -756,4 +756,26 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(btn.getAttribute('data-target'))?.classList.add('active');
         });
     });
+
+    // ── Floating scroll-to-catalog-top button ──
+    const scrollTopBtn = document.getElementById('scroll-to-catalog');
+    const catalogSection = document.getElementById('catalog');
+
+    if (scrollTopBtn && catalogSection) {
+        // Show/hide based on scroll position & view
+        window.addEventListener('scroll', () => {
+            if (currentView === 'products') {
+                const catalogTop = catalogSection.getBoundingClientRect().top + window.scrollY;
+                const scrolledPastCatalog = window.scrollY > catalogTop + 300;
+                scrollTopBtn.classList.toggle('visible', scrolledPastCatalog);
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Click: scroll back to catalog section top
+        scrollTopBtn.addEventListener('click', () => {
+            catalogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    }
 });
