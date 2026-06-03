@@ -65,9 +65,9 @@ body {
 }
 
 .navbar.scrolled {
-    background-color: rgba(255, 243, 221, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    box-shadow: none;
 }
 
 .logo-navbar {
@@ -261,6 +261,15 @@ html {
     height: 1px;
     background: linear-gradient(to var(--dir, right), transparent, var(--color-oat), transparent);
     max-width: 300px;
+}
+
+.divider-green-dark {
+    background: linear-gradient(to bottom, var(--color-sage), #4a5a3a);
+    color: rgba(255,255,255,0.8);
+}
+.divider-green-dark::before,
+.divider-green-dark::after {
+    background: linear-gradient(to var(--dir, right), transparent, rgba(255,255,255,0.3), transparent);
 }
 
 .section-divider::before { --dir: right; }
