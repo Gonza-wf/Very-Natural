@@ -251,13 +251,13 @@ const products = [
     {
         id: 'prod1',
         category: 'jabones',
-        img: 'assets/Producto_1.png',
+        img: 'assets/Jabon1.png',
         waProduct: { es: 'Mascarilla Jabón Avena', en: 'Oat Mask Soap' }
     },
     {
         id: 'prod2',
         category: 'jabones',
-        img: 'assets/Producto_2.png',
+        img: 'assets/Jabon2.png',
         waProduct: { es: 'Jabón Mascarilla Detox', en: 'Detox Mask Soap' }
     },
     {
@@ -265,6 +265,12 @@ const products = [
         category: 'cremas',
         img: 'assets/Crema1.png',
         waProduct: { es: 'Crema Vainilla y Manzanilla', en: 'Vanilla & Chamomile Cream' }
+    },
+    {
+        id: 'prod4',
+        category: 'jabones',
+        img: 'assets/Jabon3.png',
+        waProduct: { es: 'Jabón Z Aloe & Miel', en: 'Z Soap Aloe & Honey' }
     }
     // Agrega más productos aquí...
 ];
@@ -296,12 +302,44 @@ const productData = {
                    <p>Solo para uso externo. Evita el contacto con los ojos. Suspende su uso en caso de irritación. Mantener fuera del alcance de los niños.</p>`
         },
         "prod3": {
-            name: "Vainilla y Manzanilla",
-            price: "Consultar precio",
+            name: "Crema Batida Vainilla y Manzanilla",
+            price: "$19.99 USD",
             size: "Varias presentaciones",
-            desc: `<p>Próximamente más información sobre esta deliciosa crema natural de Vainilla y Manzanilla.</p>`,
-            ingr: `<p>Información de ingredientes en actualización.</p>`,
-            prop: `<p>Propiedades en actualización.</p>`
+            desc: `<p><strong>Crema Batida de Cebo de Res con Caléndula, Manzanilla y Vainilla</strong></p>
+                   <p>Nutrición profunda y piel suave.</p>
+                   <p>Crema batida artesanal elaborada con cebo de res filtrado y aceites vegetales seleccionados. Ayuda a nutrir, suavizar y mantener la piel con una sensación confortable e hidratada, aportando elasticidad y cuidado diario.</p>
+                   <br><p><strong>Modo de Uso:</strong></p>
+                   <p>Aplicar una pequeña cantidad sobre la piel limpia y seca, masajeando suavemente hasta su completa absorción. Uso diario.</p>`,
+            ingr: `<p><strong>Ingredientes (INCI):</strong></p>
+                   <p>Tallow, Simmondsia Chinensis (Jojoba) Seed Oil, Ricinus Communis (Castor) Seed Oil, Calendula Officinalis Flower Extract, Chamomilla Recutita Flower Extract, Vanilla Planifolia Fruit Extract, Leptospermum Scoparium Leaf Oil, Tocopherol.</p>`,
+            prop: `<p><strong>Beneficios Principales:</strong></p>
+                   <ul>
+                       <li><strong>Nutrición profunda:</strong> Penetra las capas de la piel aportando vitaminas esenciales.</li>
+                       <li><strong>Piel suave e hidratada:</strong> Mantiene la humedad natural de la piel durante todo el día.</li>
+                       <li><strong>Elasticidad cutánea:</strong> Contribuye a mejorar la firmeza y elasticidad.</li>
+                       <li><strong>Efecto calmante:</strong> Sensación reconfortante con aroma natural a vainilla y manuka.</li>
+                   </ul>
+                   <br><p><strong>Precauciones:</strong></p>
+                   <p>Solo para uso externo. Evitar contacto con los ojos. Suspender su uso si presenta irritación. Mantener fuera del alcance de los niños.</p>
+                   <br><p><em>Conservar en un lugar fresco, seco y alejado de la luz directa del sol.</em></p>`
+        },
+        "prod4": {
+            name: "Jabón Z Mascarilla 2 en 1 — Aloe & Miel",
+            price: "$4.99 USD",
+            size: "40g / 1.4 oz",
+            desc: `<p><strong>Jabón Artesanal de Glicerina con Aloe Vera, Miel de Manuka y Lavanda</strong></p>
+                   <p>Jabón artesanal elaborado con base de glicerina enriquecida con Aloe Vera, miel de Manuka y aceite esencial de lavanda. Limpia suavemente la piel ayudando a mantenerla hidratada, suave y con un aroma relajante.</p>`,
+            ingr: `<p><strong>Ingredientes (INCI):</strong></p>
+                   <p>Glycerin, Aqua, Sodium Stearate, Propylene Glycol, Aloe Barbadensis Leaf Juice, Mel, Lavandula Angustifolia Oil.</p>`,
+            prop: `<p><strong>Beneficios Principales:</strong></p>
+                   <ul>
+                       <li><strong>Limpieza suave:</strong> Respeta el equilibrio natural de la piel.</li>
+                       <li><strong>Hidratación natural:</strong> Ayuda a mantener la hidratación sin resecar.</li>
+                       <li><strong>Efecto calmante:</strong> Sensación calmante y relajante al contacto.</li>
+                       <li><strong>Aroma natural:</strong> Delicado aroma a lavanda que relaja los sentidos.</li>
+                   </ul>
+                   <br><p><strong>Advertencias:</strong></p>
+                   <p>Solo para uso externo. Evita el contacto con los ojos. Suspende su uso en caso de irritación. Mantener fuera del alcance de los niños.</p>`
         },
         "prod2": {
             name: "Jabón Mascarilla Facial Detox",
@@ -369,12 +407,44 @@ const productData = {
                    <p>For external use only. Avoid contact with eyes. Keep out of reach of children.</p>`
         },
         "prod3": {
-            name: "Vanilla and Chamomile",
-            price: "Check price",
+            name: "Whipped Vanilla & Chamomile Cream",
+            price: "$19.99 USD",
             size: "Various sizes",
-            desc: `<p>More information about this delicious natural Vanilla and Chamomile cream coming soon.</p>`,
-            ingr: `<p>Ingredient information updating.</p>`,
-            prop: `<p>Properties updating.</p>`
+            desc: `<p><strong>Whipped Tallow Cream with Calendula, Chamomile & Vanilla</strong></p>
+                   <p>Deep nourishment for soft, supple skin.</p>
+                   <p>Artisanal whipped cream made with filtered beef tallow and selected vegetable oils. Helps nourish, soften, and maintain skin with a comfortable, hydrated feeling while providing elasticity and daily care.</p>
+                   <br><p><strong>How to Use:</strong></p>
+                   <p>Apply a small amount to clean, dry skin and massage gently until fully absorbed. For daily use.</p>`,
+            ingr: `<p><strong>Ingredients (INCI):</strong></p>
+                   <p>Tallow, Simmondsia Chinensis (Jojoba) Seed Oil, Ricinus Communis (Castor) Seed Oil, Calendula Officinalis Flower Extract, Chamomilla Recutita Flower Extract, Vanilla Planifolia Fruit Extract, Leptospermum Scoparium Leaf Oil, Tocopherol.</p>`,
+            prop: `<p><strong>Main Benefits:</strong></p>
+                   <ul>
+                       <li><strong>Deep Nourishment:</strong> Penetrates skin layers delivering essential vitamins.</li>
+                       <li><strong>Soft & Hydrated Skin:</strong> Maintains natural moisture throughout the day.</li>
+                       <li><strong>Improved Elasticity:</strong> Helps enhance skin firmness and elasticity.</li>
+                       <li><strong>Soothing Effect:</strong> Comforting sensation with natural vanilla and manuka aroma.</li>
+                   </ul>
+                   <br><p><strong>Precautions:</strong></p>
+                   <p>For external use only. Avoid contact with eyes. Discontinue use if irritation occurs. Keep out of reach of children.</p>
+                   <br><p><em>Store in a cool, dry place away from direct sunlight.</em></p>`
+        },
+        "prod4": {
+            name: "Z Mask Soap 2-in-1 — Aloe & Honey",
+            price: "$4.99 USD",
+            size: "1.4 oz / 40g",
+            desc: `<p><strong>Artisanal Glycerin Soap with Aloe Vera, Manuka Honey & Lavender</strong></p>
+                   <p>Handcrafted soap made with a glycerin base enriched with Aloe Vera, Manuka honey, and lavender essential oil. Gently cleanses the skin while helping to keep it hydrated, soft, and with a relaxing aroma.</p>`,
+            ingr: `<p><strong>Ingredients (INCI):</strong></p>
+                   <p>Glycerin, Aqua, Sodium Stearate, Propylene Glycol, Aloe Barbadensis Leaf Juice, Mel, Lavandula Angustifolia Oil.</p>`,
+            prop: `<p><strong>Main Benefits:</strong></p>
+                   <ul>
+                       <li><strong>Gentle Cleansing:</strong> Respects the skin's natural balance.</li>
+                       <li><strong>Natural Hydration:</strong> Helps maintain moisture without drying.</li>
+                       <li><strong>Soothing Effect:</strong> Calming and relaxing sensation on contact.</li>
+                       <li><strong>Natural Aroma:</strong> Delicate lavender scent that soothes the senses.</li>
+                   </ul>
+                   <br><p><strong>Warnings:</strong></p>
+                   <p>For external use only. Avoid contact with eyes. Discontinue use if irritation occurs. Keep out of reach of children.</p>`
         }
     }
 };

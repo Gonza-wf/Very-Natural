@@ -456,7 +456,8 @@ html {
 /* Catalog Section */
 .catalog-section {
     padding: 6rem 0;
-    background-color: var(--color-white);
+    background-color: #4a5a3a;
+    color: var(--color-white);
 }
 
 .section-title {
@@ -555,7 +556,7 @@ html {
     gap: 0.5rem;
     background: transparent;
     border: none;
-    color: var(--color-text);
+    color: rgba(255,255,255,0.85);
     font-family: var(--font-heading);
     font-size: 1.1rem;
     cursor: pointer;
@@ -564,7 +565,7 @@ html {
 }
 
 .btn-back:hover {
-    color: var(--color-sage);
+    color: #fff;
     transform: translateX(-5px);
 }
 
@@ -584,8 +585,8 @@ html {
 
 .quick-filter-btn {
     background: transparent;
-    border: 1px solid var(--color-sage);
-    color: var(--color-sage);
+    border: 1px solid rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.85);
     padding: 0.4rem 1.2rem;
     border-radius: 999px;
     font-family: var(--font-body);
@@ -595,20 +596,22 @@ html {
 }
 
 .quick-filter-btn:hover {
-    background: var(--color-sage);
+    background: rgba(255,255,255,0.2);
     color: #fff;
+    border-color: rgba(255,255,255,0.7);
 }
 
 .quick-filter-btn.active {
-    background: var(--color-sage);
+    background: var(--color-terra);
     color: #fff;
+    border-color: var(--color-terra);
     font-weight: 600;
 }
 
 /* "Coming soon" message */
 .no-products {
     text-align: center;
-    color: #999;
+    color: rgba(255,255,255,0.6);
     font-style: italic;
     font-size: 1rem;
     padding: 3rem 0;
