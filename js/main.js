@@ -229,11 +229,8 @@ function updateWhatsAppLinks() {
             : 'Hi Veronica! I would like more information about the products.'
     );
     const floatingUrl = `https://wa.me/${whatsappNumber}?text=${generalMsg}`;
-    const floatingWa = document.getElementById('floating-wa');
-    if (floatingWa) floatingWa.setAttribute('href', floatingUrl);
-
-    const footerWa = document.getElementById('footer-wa');
-    if (footerWa) footerWa.setAttribute('href', floatingUrl);
+    document.getElementById('floating-wa').setAttribute('href', floatingUrl);
+    document.getElementById('footer-wa').setAttribute('href', floatingUrl);
 }
 
 updateWhatsAppLinks();
