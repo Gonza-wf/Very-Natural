@@ -207,9 +207,22 @@
     <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
-            <div class="testimonial-card scroll-reveal">
-                <p id="testimonial-text" class="quote">"Finalmente una crema que mi piel sensible tolera. El olor a natural es increíble. Es un lujo para todos los días."</p>
-                <p class="author">— Sarah T., Texas</p>
+            <div class="testimonial-carousel scroll-reveal">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"Finalmente una crema que mi piel sensible tolera. El olor a natural es increíble. Es un lujo para todos los días."</p>
+                    <p class="author">- Sarah T.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"Mi piel nunca se había sentido tan hidratada. El jabón detox limpia profundamente sin resecar."</p>
+                    <p class="author">- María L.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"Los mejores productos naturales que he probado. El empaque es hermoso y los ingredientes son puros."</p>
+                    <p class="author">- Elena G.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -278,19 +291,37 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">
-                <img src="assets/VN1_blanco.svg?v=4" alt="Very Natural Logo" class="footer-logo-mark">
-                <div class="footer-logo-text">
-                    <span class="footer-logo-main">VERY NATURAL</span>
-                    <span class="footer-logo-sub">NATURAL COSMETICS</span>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/VN1_blanco.svg" alt="Very Natural Logo" class="footer-logo-mark">
+                <h3>Very Natural</h3>
+                <p>Cuidado de la piel artesanal, 100% natural y elaborado en lotes pequeños.</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="#" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
                 </div>
             </div>
-            <div class="footer-links">
-                <a href="https://instagram.com" target="_blank">Instagram</a>
-                <a href="#" id="footer-wa">WhatsApp</a>
+            
+            <div class="footer-links-col">
+                <h4>Enlaces Rápidos</h4>
+                <a href="#catalog">Catálogo</a>
+                <a href="#ingredients">Ingredientes</a>
+                <a href="#story">Nuestra Historia</a>
+                <a href="#faq">Preguntas Frecuentes</a>
             </div>
-            <p id="footer-disclaimer" class="disclaimer">* These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+
+            <div class="footer-newsletter">
+                <h4>Únete al Club Natural</h4>
+                <p>Suscríbete y recibe 10% OFF en tu primer pedido.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">→</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p id="footer-disclaimer" class="disclaimer">* Estas declaraciones no han sido evaluadas por la FDA. Este producto no está destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad.</p>
+            <p>&copy; 2026 Very Natural Cosmetics. Todos los derechos reservados.</p>
         </div>
     </footer>
 
