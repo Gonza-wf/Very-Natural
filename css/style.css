@@ -281,6 +281,14 @@ html {
     background: linear-gradient(to var(--dir, right), transparent, rgba(255,255,255,0.3), transparent);
 }
 
+.divider-oat-white {
+    background: linear-gradient(to bottom, var(--color-oat), var(--color-white));
+}
+.divider-oat-white::before,
+.divider-oat-white::after {
+    background: linear-gradient(to var(--dir, right), transparent, var(--color-sage), transparent);
+}
+
 .section-divider::before { --dir: right; }
 .section-divider::after { --dir: left; }
 
@@ -646,6 +654,7 @@ html {
 
 .product-card {
     background: var(--color-white);
+    color: var(--color-text);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);

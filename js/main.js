@@ -5,8 +5,13 @@ window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
         preloader.classList.add('hidden');
-        // Quitarlo del DOM después de la transición (0.8s)
-        setTimeout(() => preloader.remove(), 800);
+        // Quitarlo del DOM y disparar animación de hero después de la transición
+        setTimeout(() => {
+            preloader.remove();
+            document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('visible'));
+        }, 800);
+    } else {
+        document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('visible'));
     }
 });
 
@@ -597,7 +602,7 @@ function renderCatalog(filter = 'todo') {
                 const card = document.createElement('div');
                 card.className = `product-card ${delayClass}`;
                 card.innerHTML = `
-                    <img src="${product.img}" alt="${data.name}" class="product-img" data-product-id="${product.id}">
+                    <img src="${product.img}" alt="${data.name}" class="product-img" data-product-id="${product.id}" loading="lazy" fetchpriority="low">
                     <div class="product-info">
                         <h3 class="product-name">${data.name}</h3>
                         <p class="product-size">${data.size}</p>
@@ -688,11 +693,6 @@ function openModal(productId) {
 // DOM CONTENT LOADED
 // =====================================
 document.addEventListener('DOMContentLoaded', () => {
-
-    // ── Hero reveal ──
-    setTimeout(() => {
-        document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('visible'));
-    }, 100);
 
     // ── Scroll reveal observer ──
     document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
