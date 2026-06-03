@@ -1,4 +1,16 @@
 // =====================================
+// PRELOADER
+// =====================================
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('hidden');
+        // Quitarlo del DOM después de la transición (0.8s)
+        setTimeout(() => preloader.remove(), 800);
+    }
+});
+
+// =====================================
 // TRANSLATIONS
 // =====================================
 const translations = {
