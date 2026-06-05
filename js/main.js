@@ -241,6 +241,20 @@ updateWhatsAppLinks();
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
+
+    // Check if navbar is over a dark section to invert text colors
+    let isOverDark = false;
+    const darkSections = document.querySelectorAll('.catalog-section, .testimonial-section');
+    const navHeight = navbar.offsetHeight || 80;
+
+    darkSections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= navHeight / 2 && rect.bottom >= navHeight / 2) {
+            isOverDark = true;
+        }
+    });
+
+    navbar.classList.toggle('over-dark', isOverDark);
 });
 
 // =====================================

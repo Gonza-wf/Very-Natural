@@ -111,12 +111,12 @@ body {
     transform: scale(1.05);
 }
 
-.navbar.scrolled .logo-mark {
+.navbar.scrolled:not(.over-dark) .logo-mark {
     filter: brightness(0.2) sepia(0.2) hue-rotate(350deg);
 }
 
-.navbar.scrolled .logo-main,
-.navbar.scrolled .logo-sub {
+.navbar.scrolled:not(.over-dark) .logo-main,
+.navbar.scrolled:not(.over-dark) .logo-sub {
     color: var(--color-text);
 }
 
@@ -133,8 +133,19 @@ body {
     transition: all 0.3s ease;
 }
 
-.navbar.scrolled .lang-toggle button {
+.navbar.scrolled:not(.over-dark) .lang-toggle button {
     color: var(--color-text); /* Oscuro cuando se hace scroll */
+}
+
+/* --- Invertir a blanco sobre fondos oscuros (Catalog, Testimonials) --- */
+.navbar.over-dark .logo-mark {
+    filter: none;
+}
+
+.navbar.over-dark .logo-main,
+.navbar.over-dark .logo-sub,
+.navbar.over-dark .lang-toggle button {
+    color: var(--color-white);
 }
 
 .lang-toggle button.active {
@@ -1327,8 +1338,12 @@ html {
     transition: all 0.3s ease;
 }
 
-.navbar.scrolled .hamburger-btn span {
+.navbar.scrolled:not(.over-dark) .hamburger-btn span {
     background-color: var(--color-text);
+}
+
+.navbar.over-dark .hamburger-btn span {
+    background-color: var(--color-white);
 }
 
 .hamburger-btn.active span:nth-child(1) {
