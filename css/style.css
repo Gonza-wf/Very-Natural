@@ -33,6 +33,7 @@ body {
     color: var(--color-text);
     background-color: var(--color-tallow);
     line-height: 1.6;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Custom Scrollbar */
@@ -1094,6 +1095,16 @@ html {
     .logo-mark {
         height: 40px;
     }
+    /* --- Mobile Padding Adjustments --- */
+    .catalog-section,
+    .ingredients-section,
+    .ritual-section,
+    .story-section,
+    .testimonial-section,
+    .faq-section {
+        padding: 4rem 0 !important; /* Less whitespace on mobile */
+    }
+
     .hero {
         justify-content: center;
         background-position: center;

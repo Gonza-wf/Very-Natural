@@ -630,22 +630,24 @@ function renderCatalog(filter = 'todo') {
 // =====================================
 function initTiltEffect() {
     document.querySelectorAll('#catalog-grid .product-card').forEach(card => {
-        // Agregar transición suave durante hover
-        card.addEventListener('mouseenter', () => {
-            card.style.transition = 'transform 0.1s ease-out';
-        });
+        // Agregar transición suave durante hover (solo en dispositivos con ratón)
+        if (window.matchMedia("(hover: hover)").matches) {
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'transform 0.1s ease-out';
+            });
 
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const rotateX = (((e.clientY - rect.top)  / rect.height) - 0.5) * -8;
-            const rotateY = (((e.clientX - rect.left) / rect.width)  - 0.5) *  8;
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
-        });
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const rotateX = (((e.clientY - rect.top)  / rect.height) - 0.5) * -8;
+                const rotateY = (((e.clientX - rect.left) / rect.width)  - 0.5) *  8;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+            });
 
-        card.addEventListener('mouseleave', () => {
-            card.style.transition = 'transform 0.3s ease-out';
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
-        });
+            card.addEventListener('mouseleave', () => {
+                card.style.transition = 'transform 0.3s ease-out';
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+            });
+        }
     });
 }
 
