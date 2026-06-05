@@ -1605,6 +1605,11 @@ html {
     visibility: hidden;
 }
 
+.preloader.fade-bg {
+    background-color: transparent;
+    pointer-events: none; /* Let users click through to the site during animation */
+}
+
 .preloader-logo {
     width: 120px;
     height: auto;

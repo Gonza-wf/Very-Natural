@@ -4,12 +4,44 @@
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
-        preloader.classList.add('hidden');
-        // Quitarlo del DOM y disparar animación de hero después de la transición
-        setTimeout(() => {
-            preloader.remove();
-            document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('visible'));
-        }, 800);
+        const preloaderLogo = preloader.querySelector('.preloader-logo');
+        const targetLogo = document.querySelector('.navbar .logo-mark');
+
+        if (preloaderLogo && targetLogo) {
+            // Stop pulse animation
+            preloaderLogo.style.animation = 'none';
+            
+            // Hide target logo temporarily
+            targetLogo.style.opacity = '0';
+            targetLogo.style.transition = 'opacity 0.3s ease';
+            
+            const pRect = preloaderLogo.getBoundingClientRect();
+            const tRect = targetLogo.getBoundingClientRect();
+            
+            // Calculate scale and translation
+            const scale = tRect.width / pRect.width;
+            const tx = (tRect.left + tRect.width / 2) - (pRect.left + pRect.width / 2);
+            const ty = (tRect.top + tRect.height / 2) - (pRect.top + pRect.height / 2);
+            
+            // Animate preloader logo
+            preloaderLogo.style.transition = 'transform 0.8s cubic-bezier(0.77, 0, 0.175, 1)';
+            preloaderLogo.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+            
+            // Fade out preloader background
+            preloader.classList.add('fade-bg');
+            
+            setTimeout(() => {
+                targetLogo.style.opacity = '1';
+                preloader.remove();
+                document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('visible'));
+            }, 800);
+        } else {
+            preloader.classList.add('hidden');
+            setTimeout(() => {
+                preloader.remove();
+                document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('visible'));
+            }, 800);
+        }
     } else {
         document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('visible'));
     }
