@@ -301,7 +301,7 @@ const products = [
         id: 'prod4',
         category: 'jabones',
         img: 'assets/Jabon3.png?v=2',
-        waProduct: { es: 'Jabón Z Aloe & Miel', en: 'Z Soap Aloe & Honey' }
+        waProduct: { es: 'Jabón Aloe & Miel', en: 'Aloe & Honey Soap' }
     }
     // Agrega más productos aquí...
 ];
@@ -355,7 +355,7 @@ const productData = {
                    <br><p><em>Conservar en un lugar fresco, seco y alejado de la luz directa del sol.</em></p>`
         },
         "prod4": {
-            name: "Jabón Z Mascarilla 2 en 1 — Aloe & Miel",
+            name: "Jabón Mascarilla 2 en 1 — Aloe & Miel",
             price: "$4.99 USD",
             size: "40g / 1.4 oz",
             desc: `<p><strong>Jabón Artesanal de Glicerina con Aloe Vera, Miel de Manuka y Lavanda</strong></p>
