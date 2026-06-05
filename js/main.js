@@ -268,13 +268,13 @@ const products = [
     {
         id: 'prod1',
         category: 'jabones',
-        img: 'assets/Jabon1.png',
+        img: 'assets/Jabon1.png?v=2',
         waProduct: { es: 'Mascarilla Jabón Avena', en: 'Oat Mask Soap' }
     },
     {
         id: 'prod2',
         category: 'jabones',
-        img: 'assets/Jabon2.png',
+        img: 'assets/Jabon2.png?v=2',
         waProduct: { es: 'Jabón Mascarilla Detox', en: 'Detox Mask Soap' }
     },
     {
@@ -286,7 +286,7 @@ const products = [
     {
         id: 'prod4',
         category: 'jabones',
-        img: 'assets/Jabon3.png',
+        img: 'assets/Jabon3.png?v=2',
         waProduct: { es: 'Jabón Z Aloe & Miel', en: 'Z Soap Aloe & Honey' }
     }
     // Agrega más productos aquí...
