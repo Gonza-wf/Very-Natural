@@ -52,45 +52,45 @@ window.addEventListener('load', () => {
 // =====================================
 const translations = {
     es: {
-        heroTitle: "El ritual de nutrición que tu piel merece.",
+        heroTitle: "El ritual de nutriciÃ³n que tu piel merece.",
         heroSubtitle: "Artesana, 100% natural.",
-        heroCta: "Ver Catálogo",
-        ritual1Title: "Nutrición Profunda",
-        ritual1Desc: "El Tallow imita la barrera natural de la piel permitiendo una absorción inmediata llena de vitaminas A, D, E y K.",
-        ritual2Title: "Lotes Pequeños (Small Batch)",
-        ritual2Desc: "Garantía de frescura. Elaborado esta misma semana sin conservantes químicos.",
+        heroCta: "Ver CatÃ¡logo",
+        ritual1Title: "NutriciÃ³n Profunda",
+        ritual1Desc: "El Tallow imita la barrera natural de la piel permitiendo una absorciÃ³n inmediata llena de vitaminas A, D, E y K.",
+        ritual2Title: "Lotes PequeÃ±os (Small Batch)",
+        ritual2Desc: "GarantÃ­a de frescura. Elaborado esta misma semana sin conservantes quÃ­micos.",
         ritual3Title: "Aroma Terapia",
-        ritual3Desc: "Los aceites esenciales puros brindan una experiencia aromática que relaja tu sistema nervioso.",
+        ritual3Desc: "Los aceites esenciales puros brindan una experiencia aromÃ¡tica que relaja tu sistema nervioso.",
         ingredientsTitle: "Nuestros Ingredientes Estrella",
         ing1Title: "Grass-Fed Tallow",
-        ing1Desc: "Rico en vitaminas A, D, E y K, es el humectante más compatible con la biología de tu piel.",
-        ing2Title: "Avena Orgánica",
-        ing2Desc: "Un calmante natural ancestral que reduce la inflamación y protege la barrera cutánea.",
+        ing1Desc: "Rico en vitaminas A, D, E y K, es el humectante mÃ¡s compatible con la biologÃ­a de tu piel.",
+        ing2Title: "Avena OrgÃ¡nica",
+        ing2Desc: "Un calmante natural ancestral que reduce la inflamaciÃ³n y protege la barrera cutÃ¡nea.",
         ing3Title: "Miel Cruda",
         ing3Desc: "Un potente humectante repleto de enzimas y antioxidantes que iluminan tu rostro al instante.",
         counter1Text: "Clientas Satisfechas",
         counter2Text: "Ingredientes Naturales",
         counter3Text: "Artesana Desde",
-        catalogTitle: "Nuestro Catálogo",
-        btnBack: "Volver a Categorías",
+        catalogTitle: "Nuestro CatÃ¡logo",
+        btnBack: "Volver a CategorÃ­as",
         btnDetails: "Ver Detalles",
         btnWa: "WhatsApp",
-        comingSoon: "Próximamente en esta categoría...",
-        tabBtnDesc: "Descripción",
+        comingSoon: "PrÃ³ximamente en esta categorÃ­a...",
+        tabBtnDesc: "DescripciÃ³n",
         tabBtnIngr: "Ingredientes",
         tabBtnProp: "Propiedades",
-        testimonialText: "\"Finalmente una crema que mi piel sensible tolera. El olor a natural es increíble. Es un lujo para todos los días.\"",
+        testimonialText: "\"Finalmente una crema que mi piel sensible tolera. El olor a natural es increÃ­ble. Es un lujo para todos los dÃ­as.\"",
         storyTitle: "Nuestra Historia",
-        storyP1: "Mi pasión por el bienestar natural me llevó a buscar alternativas reales a los químicos industriales.",
-        storyP2: "Very Natural nace con la promesa de entregar solo productos que yo misma usaría en mi familia. Hecho a mano, con amor, honestidad y respeto absoluto por tu piel.",
+        storyP1: "Mi pasiÃ³n por el bienestar natural me llevÃ³ a buscar alternativas reales a los quÃ­micos industriales.",
+        storyP2: "Very Natural nace con la promesa de entregar solo productos que yo misma usarÃ­a en mi familia. Hecho a mano, con amor, honestidad y respeto absoluto por tu piel.",
         faqTitle: "Preguntas Frecuentes",
-        faqQ1: "¿Es apto para pieles sensibles o con rosácea?",
-        faqA1: "Sí, nuestras fórmulas están diseñadas específicamente para calmar pieles reactivas utilizando ingredientes 100% naturales sin fragancias sintéticas.",
-        faqQ2: "¿Cuánto duran los productos?",
+        faqQ1: "Â¿Es apto para pieles sensibles o con rosÃ¡cea?",
+        faqA1: "SÃ­, nuestras fÃ³rmulas estÃ¡n diseÃ±adas especÃ­ficamente para calmar pieles reactivas utilizando ingredientes 100% naturales sin fragancias sintÃ©ticas.",
+        faqQ2: "Â¿CuÃ¡nto duran los productos?",
         faqA2: "Al no usar conservantes artificiales, recomendamos usar los productos dentro de los 6 meses posteriores a su apertura. Mantenlos en un lugar fresco y seco.",
-        faqQ3: "¿Realizan envíos a todo el país?",
-        faqA3: "Sí, realizamos envíos nacionales. Comunícate por WhatsApp para coordinar el envío de tu pedido a la puerta de tu casa.",
-        igTitle: "Síguenos en Instagram"
+        faqQ3: "Â¿Realizan envÃ­os a todo el paÃ­s?",
+        faqA3: "SÃ­, realizamos envÃ­os nacionales. ComunÃ­cate por WhatsApp para coordinar el envÃ­o de tu pedido a la puerta de tu casa.",
+        igTitle: "SÃ­guenos en Instagram"
     },
     en: {
         heroTitle: "Ancestral skin nourishment.",
@@ -138,7 +138,7 @@ const translations = {
 let currentLang = 'es';
 let activeFilter = 'todo';
 let currentView = 'categories'; // 'categories' or 'products'
-const whatsappNumber = "1234567890"; // ← Reemplaza con el número real de Verónica
+const whatsappNumber = "1234567890"; // â† Reemplaza con el nÃºmero real de VerÃ³nica
 
 // =====================================
 // STATIC DOM ELEMENTS TO TRANSLATE
@@ -243,7 +243,7 @@ document.head.insertAdjacentHTML('beforeend', `<style>
 // =====================================
 function updateWhatsAppLinks() {
     const template = currentLang === 'es'
-        ? '¡Hola Verónica! Me interesa ordenar: '
+        ? 'Â¡Hola VerÃ³nica! Me interesa ordenar: '
         : 'Hi Veronica! I want to order: ';
 
     document.querySelectorAll('.btn-whatsapp').forEach(btn => {
@@ -257,7 +257,7 @@ function updateWhatsAppLinks() {
 
     const generalMsg = encodeURIComponent(
         currentLang === 'es'
-            ? '¡Hola Verónica! Quisiera más información sobre los productos.'
+            ? 'Â¡Hola VerÃ³nica! Quisiera mÃ¡s informaciÃ³n sobre los productos.'
             : 'Hi Veronica! I would like more information about the products.'
     );
     const floatingUrl = `https://wa.me/${whatsappNumber}?text=${generalMsg}`;
@@ -303,10 +303,10 @@ const observer = new IntersectionObserver((entries, obs) => {
 
 // =====================================
 // PRODUCT DATABASE
-// ─────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // PARA AGREGAR UN NUEVO PRODUCTO:
-//  1. Añade un objeto en el array `products` (id, category, img, waProduct)
-//  2. Añade sus datos en `productData` tanto en 'es' como en 'en'
+//  1. AÃ±ade un objeto en el array `products` (id, category, img, waProduct)
+//  2. AÃ±ade sus datos en `productData` tanto en 'es' como en 'en'
 // =====================================
 
 // Master list: defines which products appear and their category
@@ -315,13 +315,13 @@ const products = [
         id: 'prod1',
         category: 'jabones',
         img: 'assets/Jabon1.png?v=2',
-        waProduct: { es: 'Mascarilla Jabón Avena', en: 'Oat Mask Soap' }
+        waProduct: { es: 'Mascarilla JabÃ³n Avena', en: 'Oat Mask Soap' }
     },
     {
         id: 'prod2',
         category: 'jabones',
         img: 'assets/Jabon2.png?v=2',
-        waProduct: { es: 'Jabón Mascarilla Detox', en: 'Detox Mask Soap' }
+        waProduct: { es: 'JabÃ³n Mascarilla Detox', en: 'Detox Mask Soap' }
     },
     {
         id: 'prod3',
@@ -333,96 +333,116 @@ const products = [
         id: 'prod4',
         category: 'jabones',
         img: 'assets/Jabon3.png?v=2',
-        waProduct: { es: 'Jabón Aloe & Miel', en: 'Aloe & Honey Soap' }
+        waProduct: { es: 'JabÃ³n Aloe & Miel', en: 'Aloe & Honey Soap' }
+    },
+    {
+        id: 'prod5',
+        category: 'jabones',
+        img: 'assets/Jabon4.jfif',
+        waProduct: { es: 'JabÃ³n Corporal Avena Leche y Miel', en: 'Oat Milk & Honey Body Soap' }
     }
-    // Agrega más productos aquí...
+    // Agrega mÃ¡s productos aquÃ­...
 ];
 
 // Detailed bilingual content per product
 const productData = {
     es: {
         "prod1": {
-            name: "Jabón facial Mascarilla 2 en 1",
+            name: "JabÃ³n facial Mascarilla 2 en 1",
             price: "$4.99 USD",
             size: "40g / 1.4 oz",
-            desc: `<p><strong>Jabón Mascarilla Facial Artesanal 2 en 1</strong></p>
-                   <p>Nuestro Jabón Mascarilla Facial 2 en 1 está elaborado artesanalmente con glicerina 100% vegetal enriquecida con leche de coco y leche de cabra, combinado con avena, leche, miel y un delicado toque de aceite esencial de lavanda.</p>
-                   <p>Su fórmula cremosa limpia suavemente mientras funciona como mascarilla facial, ayudando a dejar la piel con una sensación suave, nutrida y confortable.</p>
+            desc: `<p><strong>JabÃ³n Mascarilla Facial Artesanal 2 en 1</strong></p>
+                   <p>Nuestro JabÃ³n Mascarilla Facial 2 en 1 estÃ¡ elaborado artesanalmente con glicerina 100% vegetal enriquecida con leche de coco y leche de cabra, combinado con avena, leche, miel y un delicado toque de aceite esencial de lavanda.</p>
+                   <p>Su fÃ³rmula cremosa limpia suavemente mientras funciona como mascarilla facial, ayudando a dejar la piel con una sensaciÃ³n suave, nutrida y confortable.</p>
                    <br><p><strong>Modo de Uso:</strong></p>
-                   <p>Aplicar sobre la piel húmeda, masajear con suaves movimientos circulares, dejar actuar unos minutos como mascarilla. Luego enjuagar con abundante agua tibia.</p>`,
+                   <p>Aplicar sobre la piel hÃºmeda, masajear con suaves movimientos circulares, dejar actuar unos minutos como mascarilla. Luego enjuagar con abundante agua tibia.</p>`,
             ingr: `<p><strong>Ingredientes Destacados:</strong></p>
-                   <p>Glicerina vegetal 100%, Leche de Coco, Leche de Cabra, Avena Sativa Natural, Leche, Miel Orgánica, Aceite Esencial de Lavanda.</p>
+                   <p>Glicerina vegetal 100%, Leche de Coco, Leche de Cabra, Avena Sativa Natural, Leche, Miel OrgÃ¡nica, Aceite Esencial de Lavanda.</p>
                    <br><p><em>INCI: Cocos Nucifera (Coconut) Milk Glycerin, Goat Milk Glycerin, Avena Sativa Kernel Flour, Milk Powder, Mel, Lavandula Angustifolia Oil.</em></p>`,
             prop: `<p><strong>Beneficios Principales:</strong></p>
                    <ul>
-                       <li><strong>Limpieza suave:</strong> Respeta el manto hidrolipídico natural de la piel.</li>
-                       <li><strong>Calma instantánea:</strong> Ideal para pieles sensibles o reactivas.</li>
-                       <li><strong>Hidratación profunda:</strong> Aporta una textura aterciopelada y nutrida.</li>
-                       <li><strong>Doble función:</strong> Actúa como jabón limpiador y mascarilla nutritiva.</li>
+                       <li><strong>Limpieza suave:</strong> Respeta el manto hidrolipÃ­dico natural de la piel.</li>
+                       <li><strong>Calma instantÃ¡nea:</strong> Ideal para pieles sensibles o reactivas.</li>
+                       <li><strong>HidrataciÃ³n profunda:</strong> Aporta una textura aterciolada y nutrida.</li>
+                       <li><strong>Doble funciÃ³n:</strong> ActÃºa como jabÃ³n limpiador y mascarilla nutritiva.</li>
                        <li><strong>Apto para pieles secas:</strong> Especialmente recomendado para pieles con textura irregular o deshidratadas.</li>
                    </ul>
                    <br><p><strong>Advertencias:</strong></p>
-                   <p>Solo para uso externo. Evita el contacto con los ojos. Suspende su uso en caso de irritación. Mantener fuera del alcance de los niños.</p>`
+                   <p>Solo para uso externo. Evita el contacto con los ojos. Suspende su uso en caso de irritaciÃ³n. Mantener fuera del alcance de los niÃ±os.</p>`
         },
         "prod3": {
             name: "Crema Batida Vainilla y Manzanilla",
             price: "$19.99 USD",
             size: "Varias presentaciones",
-            desc: `<p><strong>Crema Batida de Cebo de Res con Caléndula, Manzanilla y Vainilla</strong></p>
-                   <p>Nutrición profunda y piel suave.</p>
-                   <p>Crema batida artesanal elaborada con cebo de res filtrado y aceites vegetales seleccionados. Ayuda a nutrir, suavizar y mantener la piel con una sensación confortable e hidratada, aportando elasticidad y cuidado diario.</p>
+            desc: `<p><strong>Crema Batida de Cebo de Res con CalÃ©ndula, Manzanilla y Vainilla</strong></p>
+                   <p>NutriciÃ³n profunda y piel suave.</p>
+                   <p>Crema batida artesanal elaborada con cebo de res filtrado y aceites vegetales seleccionados. Ayuda a nutrir, suavizar y mantener la piel con una sensaciÃ³n confortable e hidratada, aportando elasticidad y cuidado diario.</p>
                    <br><p><strong>Modo de Uso:</strong></p>
-                   <p>Aplicar una pequeña cantidad sobre la piel limpia y seca, masajeando suavemente hasta su completa absorción. Uso diario.</p>`,
+                   <p>Aplicar una pequeÃ±a cantidad sobre la piel limpia y seca, masajeando suavemente hasta su completa absorciÃ³n. Uso diario.</p>`,
             ingr: `<p><strong>Ingredientes (INCI):</strong></p>
                    <p>Tallow, Simmondsia Chinensis (Jojoba) Seed Oil, Ricinus Communis (Castor) Seed Oil, Calendula Officinalis Flower Extract, Chamomilla Recutita Flower Extract, Vanilla Planifolia Fruit Extract, Leptospermum Scoparium Leaf Oil, Tocopherol.</p>`,
             prop: `<p><strong>Beneficios Principales:</strong></p>
                    <ul>
-                       <li><strong>Nutrición profunda:</strong> Penetra las capas de la piel aportando vitaminas esenciales.</li>
-                       <li><strong>Piel suave e hidratada:</strong> Mantiene la humedad natural de la piel durante todo el día.</li>
-                       <li><strong>Elasticidad cutánea:</strong> Contribuye a mejorar la firmeza y elasticidad.</li>
-                       <li><strong>Efecto calmante:</strong> Sensación reconfortante con aroma natural a vainilla y manuka.</li>
+                       <li><strong>NutriciÃ³n profunda:</strong> Penetra las capas de la piel aportando vitaminas esenciales.</li>
+                       <li><strong>Piel suave e hidratada:</strong> Mantiene la humedad natural de la piel durante todo el dÃ­a.</li>
+                       <li><strong>Elasticidad cutÃ¡nea:</strong> Contribuye a mejorar la firmeza y elasticidad.</li>
+                       <li><strong>Efecto calmante:</strong> SensaciÃ³n reconfortante con aroma natural a vainilla y manuka.</li>
                    </ul>
                    <br><p><strong>Precauciones:</strong></p>
-                   <p>Solo para uso externo. Evitar contacto con los ojos. Suspender su uso si presenta irritación. Mantener fuera del alcance de los niños.</p>
+                   <p>Solo para uso externo. Evitar contacto con los ojos. Suspender su uso si presenta irritaciÃ³n. Mantener fuera del alcance de los niÃ±os.</p>
                    <br><p><em>Conservar en un lugar fresco, seco y alejado de la luz directa del sol.</em></p>`
         },
         "prod4": {
-            name: "Jabón Mascarilla 2 en 1 — Aloe & Miel",
+            name: "JabÃ³n Mascarilla 2 en 1 â€” Aloe & Miel",
             price: "$4.99 USD",
             size: "40g / 1.4 oz",
-            desc: `<p><strong>Jabón Artesanal de Glicerina con Aloe Vera, Miel de Manuka y Lavanda</strong></p>
-                   <p>Jabón artesanal elaborado con base de glicerina enriquecida con Aloe Vera, miel de Manuka y aceite esencial de lavanda. Limpia suavemente la piel ayudando a mantenerla hidratada, suave y con un aroma relajante.</p>`,
+            desc: `<p><strong>JabÃ³n Artesanal de Glicerina con Aloe Vera, Miel de Manuka y Lavanda</strong></p>
+                   <p>JabÃ³n artesanal elaborado con base de glicerina enriquecida con Aloe Vera, miel de Manuka y aceite esencial de lavanda. Limpia suavemente la piel ayudando a mantenerla hidratada, suave y con un aroma relajante.</p>`,
             ingr: `<p><strong>Ingredientes (INCI):</strong></p>
                    <p>Glycerin, Aqua, Sodium Stearate, Propylene Glycol, Aloe Barbadensis Leaf Juice, Mel, Lavandula Angustifolia Oil.</p>`,
             prop: `<p><strong>Beneficios Principales:</strong></p>
                    <ul>
                        <li><strong>Limpieza suave:</strong> Respeta el equilibrio natural de la piel.</li>
-                       <li><strong>Hidratación natural:</strong> Ayuda a mantener la hidratación sin resecar.</li>
-                       <li><strong>Efecto calmante:</strong> Sensación calmante y relajante al contacto.</li>
+                       <li><strong>HidrataciÃ³n natural:</strong> Ayuda a mantener la hidrataciÃ³n sin resecar.</li>
+                       <li><strong>Efecto calmante:</strong> SensaciÃ³n calmante y relajante al contacto.</li>
                        <li><strong>Aroma natural:</strong> Delicado aroma a lavanda que relaja los sentidos.</li>
                    </ul>
                    <br><p><strong>Advertencias:</strong></p>
-                   <p>Solo para uso externo. Evita el contacto con los ojos. Suspende su uso en caso de irritación. Mantener fuera del alcance de los niños.</p>`
+                   <p>Solo para uso externo. Evita el contacto con los ojos. Suspende su uso en caso de irritaciÃ³n. Mantener fuera del alcance de los niÃ±os.</p>`
         },
         "prod2": {
-            name: "Jabón Mascarilla Facial Detox",
+            name: "JabÃ³n Mascarilla Facial Detox",
             price: "$4.99 USD",
             size: "40g / 1.4 oz",
-            desc: `<p>Un tratamiento purificante de grado spa diseñado para revitalizar la piel estresada. Esta exquisita barra artesanal combina la frescura del Aloe Vera con el poder magnético del Carbón Activado y la luminosidad de la Cúrcuma.</p>
+            desc: `<p>Un tratamiento purificante de grado spa diseÃ±ado para revitalizar la piel estresada. Esta exquisita barra artesanal combina la frescura del Aloe Vera con el poder magnÃ©tico del CarbÃ³n Activado y la luminosidad de la CÃºrcuma.</p>
                    <br><p><strong>Ideal para:</strong> Pieles mixtas, grasas o con tendencia a imperfecciones.</p>`,
             ingr: `<p><strong>Propiedades de los Ingredientes:</strong></p>
                    <ul style="padding-left: 1rem;">
-                       <li style="margin-bottom:.5rem"><strong>Carbón Activado:</strong> Absorbe impurezas y exceso de grasa.</li>
-                       <li style="margin-bottom:.5rem"><strong>Cúrcuma:</strong> Antioxidante que aporta luminosidad y mejora el tono.</li>
+                       <li style="margin-bottom:.5rem"><strong>CarbÃ³n Activado:</strong> Absorbe impurezas y exceso de grasa.</li>
+                       <li style="margin-bottom:.5rem"><strong>CÃºrcuma:</strong> Antioxidante que aporta luminosidad y mejora el tono.</li>
                        <li style="margin-bottom:.5rem"><strong>Miel Cruda:</strong> Humectante natural que nutre en profundidad.</li>
                        <li style="margin-bottom:.5rem"><strong>Aceite de Tea Tree:</strong> Refrescante y purificante.</li>
                        <li style="margin-bottom:.5rem"><strong>Glicerina de Aloe Vera:</strong> Calma, hidrata y limpia con delicadeza.</li>
                    </ul>`,
             prop: `<p><strong>El Ritual de Uso:</strong></p>
-                   <p>Aplica sobre el rostro húmedo con suaves masajes circulares. <strong>Déjalo actuar de 1 a 3 minutos</strong> como mascarilla y enjuaga con agua tibia.</p>
+                   <p>Aplica sobre el rostro hÃºmedo con suaves masajes circulares. <strong>DÃ©jalo actuar de 1 a 3 minutos</strong> como mascarilla y enjuaga con agua tibia.</p>
                    <p><em>Frecuencia recomendada: 2 a 4 veces por semana.</em></p>
                    <br><p><strong>Advertencias:</strong></p>
-                   <p>Uso externo exclusivamente. Evita el contacto con los ojos. Mantener fuera del alcance de los niños.</p>`
+                   <p>Uso externo exclusivamente. Evita el contacto con los ojos. Mantener fuera del alcance de los niÃ±os.</p>`
+        },
+        "prod5": {
+            name: "JabÃ³n Corporal de avena leche y miel",
+            price: "$7.99 USD",
+            size: "100g / 3.5 oz",
+            desc: `<p>Un jabÃ³n corporal reconfortante formulado para limpiar e hidratar. (PrÃ³ximamente mÃ¡s detalles).</p>`,
+            ingr: `<p><strong>Ingredientes Destacados:</strong></p>
+                   <ul>
+                       <li>Avena</li>
+                       <li>Leche</li>
+                       <li>Miel</li>
+                   </ul>`,
+            prop: `<p><strong>Beneficios:</strong></p>
+                   <p>Suave exfoliaciÃ³n y nutriciÃ³n profunda para la piel del cuerpo.</p>`
         }
     },
     en: {
@@ -492,7 +512,7 @@ const productData = {
                    <br><p><em>Store in a cool, dry place away from direct sunlight.</em></p>`
         },
         "prod4": {
-            name: "Z Mask Soap 2-in-1 — Aloe & Honey",
+            name: "Mask Soap 2-in-1 — Aloe & Honey",
             price: "$4.99 USD",
             size: "1.4 oz / 40g",
             desc: `<p><strong>Artisanal Glycerin Soap with Aloe Vera, Manuka Honey & Lavender</strong></p>
@@ -508,6 +528,20 @@ const productData = {
                    </ul>
                    <br><p><strong>Warnings:</strong></p>
                    <p>For external use only. Avoid contact with eyes. Discontinue use if irritation occurs. Keep out of reach of children.</p>`
+        },
+        "prod5": {
+            name: "Oat Milk & Honey Body Soap",
+            price: "$7.99 USD",
+            size: "3.5 oz / 100g",
+            desc: `<p>A comforting body soap formulated to cleanse and hydrate. (More details coming soon).</p>`,
+            ingr: `<p><strong>Key Ingredients:</strong></p>
+                   <ul>
+                       <li>Oats</li>
+                       <li>Milk</li>
+                       <li>Honey</li>
+                   </ul>`,
+            prop: `<p><strong>Benefits:</strong></p>
+                   <p>Gentle exfoliation and deep nourishment for body skin.</p>`
         }
     }
 };
@@ -676,7 +710,7 @@ function renderCatalog(filter = 'todo') {
 // =====================================
 function initTiltEffect() {
     document.querySelectorAll('#catalog-grid .product-card').forEach(card => {
-        // Agregar transición suave durante hover (solo en dispositivos con ratón)
+        // Agregar transiciÃ³n suave durante hover (solo en dispositivos con ratÃ³n)
         if (window.matchMedia("(hover: hover)").matches) {
             card.addEventListener('mouseenter', () => {
                 card.style.transition = 'transform 0.1s ease-out';
@@ -741,10 +775,10 @@ function openModal(productId) {
 // =====================================
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ── Scroll reveal observer ──
+    // â”€â”€ Scroll reveal observer â”€â”€
     document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
-    // ── Typewriter ──
+    // â”€â”€ Typewriter â”€â”€
     const typewriterEl = document.querySelector('.typewriter-target');
     if (typewriterEl) {
         const fullText = typewriterEl.textContent;
@@ -762,7 +796,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1200);
     }
 
-    // ── Animated Counters ──
+    // â”€â”€ Animated Counters â”€â”€
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
@@ -781,16 +815,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
     document.querySelectorAll('.counter-number').forEach(el => counterObserver.observe(el));
 
-    // ── Scroll arrow ──
+    // â”€â”€ Scroll arrow â”€â”€
     document.querySelector('.scroll-down-arrow')?.addEventListener('click', () => {
         document.getElementById('ritual')?.scrollIntoView({ behavior: 'smooth' });
     });
 
-    // ── Render catalog & filters ──
+    // â”€â”€ Render catalog & filters â”€â”€
     renderLargeCategoryCards();
     showCategoriesView();
 
-    // ── Modal: event delegation on catalog grid ──
+    // â”€â”€ Modal: event delegation on catalog grid â”€â”€
     const modal    = document.getElementById('product-modal');
     const closeBtn = document.querySelector('.close-modal');
     const catalogGrid = document.getElementById('catalog-grid');
@@ -805,7 +839,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ── FAQ Accordion ──
+    // â”€â”€ FAQ Accordion â”€â”€
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -836,7 +870,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtn?.addEventListener('click', closeModal);
     modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
-    // ── Hamburger Menu for Mobile ──
+    // â”€â”€ Hamburger Menu for Mobile â”€â”€
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
@@ -876,7 +910,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ── Tabs ──
+    // â”€â”€ Tabs â”€â”€
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -886,7 +920,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ── Floating scroll-to-catalog-top button ──
+    // â”€â”€ Floating scroll-to-catalog-top button â”€â”€
     const scrollTopBtn = document.getElementById('scroll-to-catalog');
     const catalogSection = document.getElementById('catalog');
 
@@ -998,4 +1032,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 
