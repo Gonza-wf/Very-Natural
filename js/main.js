@@ -137,6 +137,7 @@ const translations = {
 
 let currentLang = 'es';
 let activeFilter = 'todo';
+let activeSubFilter = 'all';
 let currentView = 'categories'; // 'categories' or 'products'
 const whatsappNumber = "1234567890"; // ← Reemplaza con el número real de Verónica
 
@@ -314,12 +315,14 @@ const products = [
     {
         id: 'prod1',
         category: 'jabones',
+        subcategory: 'facial',
         img: 'assets/Jabon1.png?v=2',
         waProduct: { es: 'Mascarilla Jabón Avena', en: 'Oat Mask Soap' }
     },
     {
         id: 'prod2',
         category: 'jabones',
+        subcategory: 'facial',
         img: 'assets/Jabon2.png?v=2',
         waProduct: { es: 'Jabón Mascarilla Detox', en: 'Detox Mask Soap' }
     },
@@ -332,14 +335,16 @@ const products = [
     {
         id: 'prod4',
         category: 'jabones',
+        subcategory: 'facial',
         img: 'assets/Jabon3.png?v=2',
         waProduct: { es: 'Jabón Aloe & Miel', en: 'Aloe & Honey Soap' }
     },
     {
         id: 'prod5',
         category: 'jabones',
+        subcategory: 'corporal',
         img: 'assets/Jabon4.jfif',
-        waProduct: { es: 'Jabón Corporal Avena Leche y Miel', en: 'Oat Milk & Honey Body Soap' }
+        waProduct: { es: 'Barra Corporal Avena Leche y Miel', en: 'Oat Milk & Honey Body Bar' }
     }
     // Agrega más productos aquí...
 ];
@@ -431,10 +436,10 @@ const productData = {
                    <p>Uso externo exclusivamente. Evita el contacto con los ojos. Mantener fuera del alcance de los niños.</p>`
         },
         "prod5": {
-            name: "Jabón Corporal de avena leche y miel",
+            name: "Barra corporal de avena leche y miel",
             price: "$7.99 USD",
             size: "100g / 3.5 oz",
-            desc: `<p>Un jabón corporal reconfortante formulado para limpiar e hidratar. (Próximamente más detalles).</p>`,
+            desc: `<p>Una barra corporal reconfortante formulada para limpiar e hidratar. (Próximamente más detalles).</p>`,
             ingr: `<p><strong>Ingredientes Destacados:</strong></p>
                    <ul>
                        <li>Avena</li>
@@ -530,10 +535,10 @@ const productData = {
                     <p>For external use only. Avoid contact with eyes. Discontinue use if irritation occurs. Keep out of reach of children.</p>`
         },
         "prod5": {
-            name: "Oat Milk & Honey Body Soap",
+            name: "Oat Milk & Honey Body Bar",
             price: "$7.99 USD",
             size: "100g / 3.5 oz",
-            desc: `<p>A comforting body soap formulated to cleanse and hydrate. (More details coming soon).</p>`,
+            desc: `<p>A comforting body bar formulated to cleanse and hydrate. (More details coming soon).</p>`,
             ingr: `<p><strong>Key Ingredients:</strong></p>
                    <ul>
                        <li>Oats</li>
@@ -574,9 +579,11 @@ function showProductsView(categoryId) {
     setTimeout(() => {
         viewProducts.classList.remove('hidden');
         viewProducts.classList.add('active');
+        activeSubFilter = 'all'; // reset subfilter
         renderFilterButtons(categoryId);
+        renderSubFilterButtons();
         renderCatalog(categoryId);
-    }, 300); // Wait for fade out
+    }, 400); // Wait for fade out
 }
 
 if (btnBackCategories) {
@@ -644,20 +651,62 @@ function renderFilterButtons(selectedFilter) {
 
         btn.addEventListener('click', () => {
             activeFilter = cat.id;
+            activeSubFilter = 'all'; // reset subfilter
             renderFilterButtons(cat.id);
+            renderSubFilterButtons();
             renderCatalog(cat.id);
         });
         container.appendChild(btn);
     });
 }
 
+function renderSubFilterButtons() {
+    const container = document.getElementById('catalog-subfilters');
+    if (!container) return;
+    container.innerHTML = '';
+
+    if (activeFilter === 'jabones') {
+        container.style.display = 'flex';
+        
+        const subcategories = [
+            { id: 'all', es: 'Todos', en: 'All' },
+            { id: 'facial', es: 'Facial', en: 'Facial' },
+            { id: 'corporal', es: 'Corporal', en: 'Body' }
+        ];
+
+        subcategories.forEach(sub => {
+            const btn = document.createElement('button');
+            btn.className = 'quick-filter-btn subfilter-btn' + (sub.id === activeSubFilter ? ' active' : '');
+            btn.textContent = sub[currentLang];
+            btn.style.padding = '0.3rem 0.8rem';
+            btn.style.fontSize = '0.8rem';
+            btn.style.textTransform = 'none';
+            btn.style.border = '1px solid var(--accent-light)';
+            
+            btn.addEventListener('click', () => {
+                activeSubFilter = sub.id;
+                renderSubFilterButtons();
+                renderCatalog(activeFilter);
+            });
+            container.appendChild(btn);
+        });
+    } else {
+        container.style.display = 'none';
+    }
+}
+
 function renderCatalog(filter = 'todo') {
     const grid = document.getElementById('catalog-grid');
     if (!grid) return;
     const t = translations[currentLang];
-    const filtered = filter === 'todo'
+    
+    let filtered = filter === 'todo'
         ? products
         : products.filter(p => p.category === filter);
+
+    if (activeSubFilter && activeSubFilter !== 'all') {
+        filtered = filtered.filter(p => p.subcategory === activeSubFilter);
+    }
 
     // Fade out
     grid.style.opacity = '0';
