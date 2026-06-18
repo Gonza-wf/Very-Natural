@@ -1271,21 +1271,43 @@ html {
         font-size: 1.5rem; /* Más pequeño para que quepa bien en móvil */
     }
     .close-modal {
-        background: rgba(255,255,255,0.9);
+        background: rgba(255, 255, 255, 0.95);
         border-radius: 50%;
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 24px;
-        top: 15px;
-        right: 15px;
+        font-size: 22px;
+        top: 10px;
+        right: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        line-height: 1;
+        padding-bottom: 2px; /* Centra visualmente la cruz */
     }
 
     /* Los contadores se excluyen del reset 1-columna: siempre van en fila */
     .grid-3:not(.counters-grid), .grid-catalog, .story-grid {
         grid-template-columns: 1fr;
+    }
+
+    .counters-grid {
+        gap: 0.5rem;
+        justify-items: center;
+        align-items: flex-start;
+    }
+
+    .counter-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0.2rem;
+    }
+
+    .counter-item p {
+        font-size: clamp(0.55rem, 2.5vw, 0.8rem);
+        line-height: 1.2;
     }
 
     .story-content {
