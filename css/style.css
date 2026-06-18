@@ -1298,9 +1298,8 @@ html {
     }
 
     .counter-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block;
+        text-align: center;
         width: 100%;
         padding: 0.2rem;
     }
