@@ -345,6 +345,12 @@ const products = [
         subcategory: 'corporal',
         img: 'assets/Jabon4.jfif',
         waProduct: { es: 'Barra Corporal Avena Leche y Miel', en: 'Oat Milk & Honey Body Bar' }
+    },
+    {
+        id: 'prod6',
+        category: 'capilar',
+        img: 'assets/Shampoo1.png',
+        waProduct: { es: 'Shampoo Sólido de Café y Romero', en: 'Coffee & Rosemary Solid Shampoo' }
     }
     // Agrega más productos aquí...
 ];
@@ -448,6 +454,24 @@ const productData = {
                    </ul>`,
             prop: `<p><strong>Beneficios:</strong></p>
                    <p>Suave exfoliación y nutrición profunda para la piel del cuerpo.</p>`
+        },
+        "prod6": {
+            name: "Shampoo Sólido de Café y Romero",
+            price: "Precio pendiente",
+            size: "Tamaño pendiente",
+            desc: `<p><strong>Nutrición y Fortalecimiento</strong></p>
+                   <p>Nutre profundamente el cabello y ayuda a fortalecer la fibra capilar. Limpia suavemente sin resecar, hidrata y controla el frizz, favoreciendo un cuero cabelludo saludable.</p>
+                   <p>Deja el cabello más suave, brillante y manejable. Ideal para cabello seco, dañado, rizado, teñido y maduro.</p>`,
+            ingr: `<p><strong>Ingredientes Destacados:</strong></p>
+                   <ul>
+                       <li>Cebo de res alimentado con pastura</li>
+                       <li>Café</li>
+                       <li>Arcilla mineral</li>
+                       <li>Inulina</li>
+                       <li>Aceite esencial de romero</li>
+                   </ul>`,
+            prop: `<p><strong>Modo de Uso:</strong></p>
+                   <p>Frota la barra directamente sobre el cabello mojado o entre las manos para crear espuma. Masajea el cuero cabelludo y enjuaga con abundante agua.</p>`
         }
     },
     en: {
@@ -547,6 +571,24 @@ const productData = {
                    </ul>`,
             prop: `<p><strong>Benefits:</strong></p>
                    <p>Gentle exfoliation and deep nourishment for body skin.</p>`
+        },
+        "prod6": {
+            name: "Coffee & Rosemary Solid Shampoo",
+            price: "Price pending",
+            size: "Size pending",
+            desc: `<p><strong>Nourishment and Strengthening</strong></p>
+                   <p>Deeply nourishes hair and helps strengthen the hair fiber. Gently cleanses without drying, hydrates and controls frizz, promoting a healthy scalp.</p>
+                   <p>Leaves hair softer, shinier, and more manageable. Ideal for dry, damaged, curly, color-treated, and mature hair.</p>`,
+            ingr: `<p><strong>Key Ingredients:</strong></p>
+                   <ul>
+                       <li>Grass-fed beef tallow</li>
+                       <li>Coffee</li>
+                       <li>Mineral clay</li>
+                       <li>Inulin</li>
+                       <li>Rosemary essential oil</li>
+                   </ul>`,
+            prop: `<p><strong>How to Use:</strong></p>
+                   <p>Rub the bar directly onto wet hair or between your hands to create lather. Massage into the scalp and rinse thoroughly.</p>`
         }
     }
 };
@@ -597,6 +639,7 @@ if (btnBackCategories) {
 const filterCategories = [
     { id: 'cremas',      es: 'Cremas',      en: 'Creams', img: 'assets/Portada_cremas.jpeg' },
     { id: 'jabones',     es: 'Jabones',     en: 'Soaps',  img: 'assets/Portad_jabones.jpeg' },
+    { id: 'capilar',     es: 'Capilar',     en: 'Haircare', img: '' },
     { id: 'kits',        es: 'Kits',        en: 'Kits',   img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80' },
     { id: 'novedades',   es: 'Novedades',   en: 'New',    img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=500&q=80' },
     { id: 'todo',        es: 'Todo',        en: 'All',    img: 'assets/mujer_horizontal.png' }
