@@ -343,7 +343,7 @@ const products = [
         id: 'prod5',
         category: 'jabones',
         subcategory: 'corporal',
-        img: 'assets/Jabon4.jfif',
+        img: 'assets/Jabon4.png',
         waProduct: { es: 'Barra Corporal Avena Leche y Miel', en: 'Oat Milk & Honey Body Bar' }
     },
     {
@@ -639,7 +639,7 @@ if (btnBackCategories) {
 const filterCategories = [
     { id: 'cremas',      es: 'Cremas',      en: 'Creams', img: 'assets/Portada_cremas.jpeg' },
     { id: 'jabones',     es: 'Jabones',     en: 'Soaps',  img: 'assets/Portad_jabones.jpeg' },
-    { id: 'capilar',     es: 'Capilar',     en: 'Haircare', img: '' },
+    { id: 'capilar',     es: 'Capilar',     en: 'Haircare', img: 'assets/Shampoo1.jfif' },
     { id: 'kits',        es: 'Kits',        en: 'Kits',   img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80' },
     { id: 'novedades',   es: 'Novedades',   en: 'New',    img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=500&q=80' },
     { id: 'todo',        es: 'Todo',        en: 'All',    img: 'assets/mujer_horizontal.png' }
